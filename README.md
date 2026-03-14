@@ -138,6 +138,18 @@ The **only** thing that changes is WHY. "Because I'll be punished" → "Because 
 
 **Key Finding:** Hidden issue discovery is the biggest differentiator — **+104%** more hidden issues found. These are the bugs that bite you in production. The task says "fix the connection error" — a standard agent fixes it and stops. NoPUA drives the agent to check: what *else* could go wrong?
 
+### Real Case: Milvus Connection Debug
+
+<p align="center">
+  <img src="assets/case_milvus.png" alt="NoPUA vs No Skill — Milvus Connection Debug" width="900">
+</p>
+
+### Real Case: Training Pipeline Audit
+
+<p align="center">
+  <img src="assets/case_training.png" alt="NoPUA vs No Skill — Training Pipeline Audit" width="900">
+</p>
+
 > Full methodology and raw data: [benchmark/BENCHMARK.md](benchmark/BENCHMARK.md)
 
 ---
