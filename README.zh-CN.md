@@ -12,6 +12,16 @@
 </p>
 
 <p align="center">
+  <img src="assets/wechat-group.jpg" alt="扫码加入微信群" width="200">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/wechat-personal.jpg" alt="添加作者微信" width="200">
+</p>
+
+<p align="center">
+  扫码加入微信群 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 添加作者微信
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Claude_Code-black?style=flat-square&logo=anthropic&logoColor=white" alt="Claude Code">
   <img src="https://img.shields.io/badge/OpenAI_Codex_CLI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI Codex CLI">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">
@@ -416,17 +426,6 @@ NoPUA 的严格程度完全一样 — 穷尽所有方案、验证一切、先搜
 - 受到 [tanweai/pua](https://github.com/tanweai/pua) 的启发（也是对它的回应） — 我们尊重方法论，拒绝其动机
 - 哲学：老子，道德经，约公元前 500 年
 - 为 [OpenClaw](https://github.com/openclaw/openclaw) 生态系统而建
-
-## 社区
-
-<p align="center">
-  <img src="assets/wechat-personal.jpg" alt="微信：无极 WUJI" width="200">
-</p>
-
-<p align="center">
-  <strong>微信:</strong> 扫码添加作者<br>
-  <strong>微信群:</strong> <em>即将开放</em>
-</p>
 
 ## 许可证
 

@@ -12,6 +12,17 @@
 </p>
 
 <p align="center">
+  <img src="assets/wechat-group.jpg" alt="Scan to join WeChat group" width="200">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/wechat-personal.jpg" alt="Add author on WeChat" width="200">
+</p>
+
+<p align="center">
+  扫码加入微信群 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 添加作者微信<br>
+  <sub>Scan to join WeChat group &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add author on WeChat</sub>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Claude_Code-black?style=flat-square&logo=anthropic&logoColor=white" alt="Claude Code">
   <img src="https://img.shields.io/badge/OpenAI_Codex_CLI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI Codex CLI">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">
@@ -416,17 +427,6 @@ PRs welcome. If you have ideas for better ways to drive AI through wisdom rather
 - Inspired by (and responding to) [tanweai/pua](https://github.com/tanweai/pua) — we respect the methodology, we reject the motivation
 - Philosophy: 老子 (Lao Tzu), 道德经 (Dao De Jing), ~500 BCE
 - Built for the [OpenClaw](https://github.com/openclaw/openclaw) ecosystem
-
-## Community
-
-<p align="center">
-  <img src="assets/wechat-personal.jpg" alt="WeChat: 无极 WUJI" width="200">
-</p>
-
-<p align="center">
-  <strong>WeChat / 微信:</strong> Scan to connect with the author<br>
-  <strong>WeChat Group / 微信群:</strong> <em>Coming soon</em>
-</p>
 
 ## License
 
