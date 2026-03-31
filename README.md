@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/wechat-group2.jpg" alt="Scan to join WeChat group 2" width="200">
+  <img src="assets/wechat-group3.jpg" alt="Scan to join WeChat group 3" width="200">
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/wechat-personal.jpg" alt="Add author on WeChat" width="200">
 </p>
