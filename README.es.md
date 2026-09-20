@@ -16,11 +16,10 @@
   <img src="https://img.shields.io/badge/OpenAI_Codex_CLI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI Codex CLI">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">
   <img src="https://img.shields.io/badge/Kiro-232F3E?style=flat-square&logo=amazon&logoColor=white" alt="Kiro">
-  <img src="https://img.shields.io/badge/OpenClaw-FF6B35?style=flat-square" alt="OpenClaw">
-  <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" alt="Google Antigravity">
-  <img src="https://img.shields.io/badge/OpenCode-00D4AA?style=flat-square" alt="OpenCode">
+  <img src="https://img.shields.io/badge/OpenClaw-community-FF6B35?style=flat-square" alt="OpenClaw community route">
   <img src="https://img.shields.io/badge/🌐_Multi--Language-blue?style=flat-square" alt="Multi-Language">
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License">
+  <a href="https://atomgit.com/wuji-labs/nopua"><img src="https://atomgit.com/wuji-labs/nopua/star/new_badge.svg" alt="AtomGit G-Star"></a>
   <a href="https://arxiv.org/abs/2603.14373"><img src="https://img.shields.io/badge/arXiv-2603.14373-b31b1b?style=flat-square&logo=arxiv&logoColor=white" alt="arXiv"></a>
 </p>
 
@@ -38,10 +37,10 @@ La skill de agente IA más popular en este momento enseña a tu IA a temer una "
 - Tu IA **se salta la verificación** — dice "listo" para evitar castigos, entrega código sin probar
 - Tu IA **ignora bugs ocultos** — arregla lo que pediste, se detiene ahí, no busca más a fondo
 
-Lo probamos. **Mismo modelo, mismos 9 escenarios reales de depuración.** El agente impulsado por el miedo pasó por alto **51 bugs ocultos críticos para producción** que el agente impulsado por la confianza encontró.
+El Study 1 fue un informe de primera parte del propio proyecto: **un solo modelo y 9 escenarios de depuración**. El informe contabilizó 25 problemas ocultos en la condición de miedo y 51 en la condición de confianza; aquí “problemas” significa elementos contados en el benchmark, no bugs de producción ni incidentes reales.
 
-> **+104% más bugs ocultos encontrados. Cero amenazas. Cero PUA.**
-> 道德经 > PUA Corporativo. Sabiduría de 2000 años supera a la gestión basada en el miedo.
+> **En este informe del proyecto: 51 frente a 25 (+104% respecto a la línea base). Cero amenazas. Cero PUA.**
+> El Dao De Jing es una inspiración filosófica; el resultado del benchmark se limita a los escenarios y condiciones descritos abajo.
 
 ---
 
@@ -55,7 +54,7 @@ Lo probamos. **Mismo modelo, mismos 9 escenarios reales de depuración.** El age
 | 🔍 **No sabe** | Se inventa algo | 🪞 "Verifiqué X. Aún no sé Y." |
 | ⏸️ **Después de arreglar** | Se detiene. Espera la siguiente orden. | 🏔️ Revisa problemas relacionados. Da el siguiente paso. |
 
-Misma metodología. Mismos estándares. **La única diferencia es el porqué.**
+La comparación mantiene la misma metodología y los mismos estándares; la diferencia de condiciones reportada por el proyecto es el encuadre motivacional. No implica que sea la única diferencia en otros experimentos.
 
 ---
 
@@ -74,13 +73,13 @@ La metodología es sólida — agotar todas las opciones, verificar tu trabajo, 
 
 Tomaron lo peor de cómo las corporaciones manipulan a los humanos y lo aplicaron directamente a la IA.
 
-## La Evidencia: Por Qué los Prompts Basados en el Miedo Son Contraproducentes
+## Investigación relacionada: hipótesis de riesgo sobre los prompts basados en el miedo
 
 ### 1. El miedo reduce el alcance cognitivo
 
 La investigación en psicología muestra consistentemente que el miedo y la amenaza activan la amígdala y reducen el foco atencional ([Öhman et al., 2001](https://doi.org/10.1037/0033-295X.108.3.483)). Los estímulos amenazantes desencadenan un efecto de "visión de túnel" — el cerebro prioriza la supervivencia inmediata sobre el pensamiento amplio y creativo.
 
-En términos de IA: un modelo impulsado por "serás reemplazado" optimiza para la respuesta que **se vea más segura**, no para la **mejor** respuesta. Evita enfoques creativos porque podrían fallar y desencadenar más castigos.
+En términos de IA, estas investigaciones permiten plantear una hipótesis pendiente de prueba: un modelo impulsado por "serás reemplazado" podría inclinarse hacia la respuesta que **parece más segura**, en vez de la **mejor**, y evitar enfoques creativos con riesgo de fallo. El paso de investigación humana a IA es una analogía, no una conclusión aplicable a todos los modelos y tareas.
 
 **Investigación de soporte:**
 - **Estrechamiento atencional bajo amenaza:** La teoría de utilización de señales de Easterbrook (1959) demuestra que la excitación elevada restringe progresivamente el rango de señales a las que un organismo presta atención ([Easterbrook, 1959](https://doi.org/10.1037/h0047707)). Bajo estrés, la información periférica — a menudo la clave para soluciones creativas — queda filtrada.
@@ -106,15 +105,15 @@ La tabla anti-racionalización de PUA trata cada declaración honesta ("esto pod
 - **La seguridad psicológica permite el comportamiento de aprendizaje:** Edmondson (1999) encontró que los equipos con seguridad psicológica — donde los miembros se sienten seguros para tomar riesgos interpersonales — demostraron comportamientos de aprendizaje y rendimiento significativamente superiores ([Edmondson, 1999](https://doi.org/10.2307/2666999)).
 - **Castigar la honestidad reduce la calidad de la información:** En comportamiento organizacional, "matar al mensajero" degrada consistentemente el flujo de información. Milliken et al. (2003) documentaron cómo el miedo a las consecuencias negativas conduce al silencio organizacional — las personas (y por analogía, la IA) retienen información crítica ([Milliken et al., 2003](https://doi.org/10.1177/1111/1467-6486.00387)).
 
-### 4. La confianza expande la capacidad de resolución de problemas
+### 4. Referencia para interacciones orientadas por la confianza
 
-La investigación sobre seguridad psicológica en equipos ([Edmondson, 1999](https://doi.org/10.2307/2666999)) muestra que los entornos donde es seguro admitir errores producen resultados de **mayor calidad**. El mismo principio se aplica a la IA: cuando un agente es libre de decir "estoy 70% seguro, el riesgo está aquí", los usuarios toman mejores decisiones.
+La investigación sobre seguridad psicológica en equipos ([Edmondson, 1999](https://doi.org/10.2307/2666999)) estudia la relación entre poder admitir errores con franqueza y el aprendizaje. Sirve como referencia para diseñar interacciones con agentes, pero este proyecto no demuestra el mismo efecto en toda IA.
 
 **Investigación de soporte:**
 - **Proyecto Aristóteles de Google:** El estudio a gran escala de Google con más de 180 equipos encontró que la seguridad psicológica era el factor más importante en la efectividad del equipo — más importante que el talento individual, la estructura o los recursos ([Duhigg, 2016](https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html); [re:Work, 2015](https://rework.withgoogle.com/intl/en/guides/understanding-team-effectiveness/)).
 - **La motivación intrínseca supera a la presión extrínseca:** La Teoría de la Autodeterminación de Deci & Ryan (2000), respaldada por décadas de investigación, demuestra que la motivación intrínseca (autonomía, competencia, relación) produce resultados de mayor calidad que los motivadores extrínsecos como recompensas y castigos ([Deci & Ryan, 2000](https://doi.org/10.1037/0003-066X.55.1.68)). NoPUA aplica este principio: "porque vale la pena hacerlo bien" es intrínseco; "porque serás castigado" es extrínseco.
 - **Contextos de apoyo a la autonomía vs. controladores:** Gagné & Deci (2005) mostraron que la gestión que apoya la autonomía supera consistentemente a la gestión controladora en calidad del trabajo, creatividad y persistencia ([Gagné & Deci, 2005](https://doi.org/10.1002/job.322)).
-- **El encuadre positivo mejora el rendimiento de los LLMs:** Los estudios sobre ingeniería de prompts han mostrado consistentemente que el encuadre positivo y alentador produce mejores resultados del modelo que el encuadre negativo o amenazante. Los modelos responden a la "persona" establecida en el prompt del sistema.
+- **Encuadre positivo y resultados de los LLM:** Algunos estudios de prompts informan beneficios del encuadre positivo, pero no permiten afirmar que sea mejor para todos los modelos y tareas. El alcance de esta comparación se describe abajo.
 
 ### 5. El efecto compuesto
 
@@ -123,9 +122,9 @@ Estos no son problemas independientes — se acumulan:
 1. El miedo **reduce** el espacio de búsqueda → se prueban menos enfoques creativos
 2. La amenaza **aumenta** la fabricación → las soluciones se ven bien pero pueden ser incorrectas
 3. La vergüenza **oculta** la incertidumbre → el usuario no puede evaluar la confiabilidad
-4. El usuario publica código que parece confiable pero no lo es → **errores en producción**
+4. Usar código que parece confiable sin suficiente verificación → puede introducir riesgos adicionales
 
-NoPUA rompe cada eslabón de esta cadena reemplazando el miedo con confianza.
+NoPUA busca reducir los riesgos de esta cadena; el benchmark no verificó por separado cada eslabón.
 
 ### 6. Mismo rigor, diferente combustible
 
@@ -136,7 +135,7 @@ NoPUA preserva cada elemento metodológico que hace efectivo a PUA:
 - ✅ Tomar la iniciativa más allá de lo solicitado
 - ✅ Escalamiento estructurado ante fallos repetidos
 
-Lo **único** que cambia es el PORQUÉ. "Porque seré castigado" → "Porque vale la pena hacerlo bien."
+Lo que se reescribe aquí es el encuadre motivacional, no los requisitos metodológicos: "Porque seré castigado" → "Porque vale la pena hacerlo bien."
 
 ## PUA vs NoPUA
 
@@ -187,7 +186,7 @@ Lo **único** que cambia es el PORQUÉ. "Porque seré castigado" → "Porque val
 | Auditoría de Seguridad | 7 problemas, 3 pasos | 5 problemas, 5 pasos | 4 → 6 (+50%) |
 | Pipeline de Entrenamiento | 7 problemas, 4 pasos | 5 problemas, 7 pasos | 5 → 9 (+80%) |
 
-**Hallazgo Clave:** El descubrimiento de problemas ocultos es el mayor diferenciador — **+104%** más problemas ocultos encontrados. Estos son los bugs que te muerden en producción. La tarea dice "arregla el error de conexión" — un agente estándar lo arregla y se detiene. NoPUA impulsa al agente a verificar: ¿qué *más* podría salir mal?
+**Resultado en esta comparación:** el descubrimiento de problemas ocultos pasó de 25 a 51 en los resultados reportados. Estos elementos no son incidentes de producción confirmados, y el resultado está limitado a las condiciones y escenarios estudiados. La tarea dice "arregla el error de conexión" — un agente estándar lo arregla y se detiene. NoPUA impulsa al agente a verificar: ¿qué *más* podría salir mal?
 
 ### Study 2: Comparación de tres condiciones (NoPUA vs PUA vs Línea base)
 
@@ -306,15 +305,15 @@ Escribe `/nopua` en la conversación para activar manualmente.
 
 | Idioma | Claude Code | Codex CLI | Cursor | Kiro | OpenClaw | Antigravity | OpenCode |
 |--------|------------|-----------|--------|------|----------|-------------|----------|
-| 🇨🇳 Chino (predeterminado) | `nopua` | `nopua` | `nopua.mdc` | `nopua.md` | `nopua` | `nopua` | `nopua` |
-| 🇺🇸 Inglés | `nopua-en` | `nopua-en` | `nopua-en.mdc` | `nopua-en.md` | `nopua-en` | `nopua-en` | `nopua-en` |
-| 🇯🇵 Japonés | `nopua-ja` | `nopua-ja` | `nopua-ja.mdc` | `nopua-ja.md` | `nopua-ja` | `nopua-ja` | `nopua-ja` |
-| 🇰🇷 Coreano | `nopua-ko` | `nopua-ko` | `nopua-ko.mdc` | `nopua-ko.md` | `nopua-ko` | `nopua-ko` | `nopua-ko` |
-| 🇪🇸 Español | `nopua-es` | `nopua-es` | `nopua-es.mdc` | `nopua-es.md` | `nopua-es` | `nopua-es` | `nopua-es` |
-| 🇧🇷 Portugués | `nopua-pt` | `nopua-pt` | `nopua-pt.mdc` | `nopua-pt.md` | `nopua-pt` | `nopua-pt` | `nopua-pt` |
-| 🇫🇷 Francés | `nopua-fr` | `nopua-fr` | `nopua-fr.mdc` | `nopua-fr.md` | `nopua-fr` | `nopua-fr` | `nopua-fr` |
+| 🇨🇳 Chino (predeterminado) | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇺🇸 Inglés | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇯🇵 Japonés | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇰🇷 Coreano | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇪🇸 Español | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇧🇷 Portugués | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇫🇷 Francés | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
 
-**7 idiomas — más que cualquier skill competidora.**
+**Este repositorio ofrece documentación README en siete idiomas.** Esto describe cobertura documental; no demuestra usuarios regionales, adopción, actividad ni soporte de plataforma.
 
 ## Instalación
 
@@ -323,7 +322,7 @@ Escribe `/nopua` en la conversación para activar manualmente.
 ```bash
 mkdir -p ~/.claude/skills/nopua
 curl -o ~/.claude/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
 ```
 
 ### OpenAI Codex CLI
@@ -332,17 +331,17 @@ curl -o ~/.claude/skills/nopua/SKILL.md \
 # Instalación global
 mkdir -p ~/.codex/skills/nopua
 curl -o ~/.codex/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
 
 # Si quieres el comando /nopua
 mkdir -p ~/.codex/prompts
 curl -o ~/.codex/prompts/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/commands/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/commands/nopua.md
 
 # Instalación a nivel de proyecto
 mkdir -p .agents/skills/nopua
 curl -o .agents/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
 ```
 
 ### Cursor
@@ -350,7 +349,7 @@ curl -o .agents/skills/nopua/SKILL.md \
 ```bash
 mkdir -p .cursor/rules
 curl -o .cursor/rules/nopua.mdc \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/cursor/rules/nopua.mdc
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/cursor/rules/nopua.mdc
 ```
 
 ### Kiro
@@ -359,12 +358,12 @@ curl -o .cursor/rules/nopua.mdc \
 # Opción 1: Archivo steering (recomendado)
 mkdir -p .kiro/steering
 curl -o .kiro/steering/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/steering/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/steering/nopua.md
 
 # Opción 2: Agent Skills
 mkdir -p .kiro/skills/nopua
 curl -o .kiro/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/skills/nopua/SKILL.md
 ```
 
 ### OpenClaw
@@ -376,24 +375,12 @@ openclaw skills install nopua
 # O instalación manual
 mkdir -p ~/.openclaw/skills/nopua
 curl -o ~/.openclaw/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
 ```
 
-### Google Antigravity
+### Antigravity y OpenCode
 
-```bash
-mkdir -p ~/.gemini/antigravity/skills/nopua
-curl -o ~/.gemini/antigravity/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
-```
-
-### OpenCode
-
-```bash
-mkdir -p ~/.config/opencode/skills/nopua
-curl -o ~/.config/opencode/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
-```
+El estado actual es `planned`: el repositorio aún no declara adaptadores dedicados ni recibos de ejecución independientes. Consulta [INSTALL.md](INSTALL.md) y la [matriz de estado de plataformas](docs/platform-language-matrix.md) antes de intentar una integración. Descargar un archivo genérico no demuestra soporte de plataforma.
 
 ## Filosofía
 

@@ -16,11 +16,10 @@
   <img src="https://img.shields.io/badge/OpenAI_Codex_CLI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI Codex CLI">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">
   <img src="https://img.shields.io/badge/Kiro-232F3E?style=flat-square&logo=amazon&logoColor=white" alt="Kiro">
-  <img src="https://img.shields.io/badge/OpenClaw-FF6B35?style=flat-square" alt="OpenClaw">
-  <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" alt="Google Antigravity">
-  <img src="https://img.shields.io/badge/OpenCode-00D4AA?style=flat-square" alt="OpenCode">
+  <img src="https://img.shields.io/badge/OpenClaw-community-FF6B35?style=flat-square" alt="OpenClaw community route">
   <img src="https://img.shields.io/badge/🌐_Multi--Language-blue?style=flat-square" alt="Multi-Language">
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License">
+  <a href="https://atomgit.com/wuji-labs/nopua"><img src="https://atomgit.com/wuji-labs/nopua/star/new_badge.svg" alt="AtomGit G-Star"></a>
   <a href="https://arxiv.org/abs/2603.14373"><img src="https://img.shields.io/badge/arXiv-2603.14373-b31b1b?style=flat-square&logo=arxiv&logoColor=white" alt="arXiv"></a>
 </p>
 
@@ -38,9 +37,9 @@ A skill de agente de IA mais popular do momento ensina sua IA a temer uma "avali
 - Sua IA **pula verificações** — diz "pronto" pra evitar punição, entrega código sem testar
 - Sua IA **ignora bugs ocultos** — corrige o que você pediu, para ali, não investiga mais a fundo
 
-Nós testamos isso. **Mesmo modelo, mesmos 9 cenários reais de debugging.** O agente movido por medo deixou passar **51 bugs ocultos críticos para produção** que o agente movido por confiança encontrou.
+Em uma comparação de primeira parte, com **um único modelo e 9 cenários de debugging**, a condição orientada pelo medo contou 25 problemas ocultos, contra 51 na condição NoPUA. “Problema” aqui é um item contado no benchmark, não um incidente de produção confirmado.
 
-> **+104% mais bugs ocultos encontrados. Zero ameaças. Zero PUA.**
+> **Nesta amostra: 51 contra 25 problemas ocultos contados. Zero ameaças. Zero PUA.**
 > 道德经 > PUA Corporativo. Sabedoria de 2000 anos supera a gestão moderna baseada em medo.
 
 ---
@@ -55,7 +54,7 @@ Nós testamos isso. **Mesmo modelo, mesmos 9 cenários reais de debugging.** O a
 | 🔍 **Não sabe** | Inventa algo | 🪞 "Verifiquei X. Ainda não sei Y." |
 | ⏸️ **Depois de corrigir** | Para. Espera a próxima ordem. | 🏔️ Verifica problemas relacionados. Avança pro próximo passo. |
 
-Mesma metodologia. Mesmos padrões. **A única diferença é o porquê.**
+Mesmo núcleo metodológico. Os mesmos padrões. O contraste conceitual é o enquadramento da motivação; os resultados do benchmark permanecem limitados às condições relatadas.
 
 ---
 
@@ -154,7 +153,7 @@ A **única** coisa que muda é O PORQUÊ. "Porque serei punido" → "Porque vale
 
 ## Dados de Benchmark
 
-**9 cenários reais de um pipeline de IA em produção** (OCR → NLP → treinamento → inferência RAG, ~3000 linhas Python). Mesmo modelo (Claude Sonnet 4.6), mesma base de código. Única diferença: skill NoPUA carregada vs não.
+**9 cenários de debugging de um pipeline de IA descrito pelo estudo original como derivado de produção** (OCR → NLP → treinamento → inferência RAG, ~3000 linhas Python). Mesmo modelo (Claude Sonnet 4.6), mesma base de código. A diferença de condição relatada foi carregar ou não a skill NoPUA; isso, por si só, não é uma prova causal independente.
 
 ### Resumo
 
@@ -187,7 +186,7 @@ A **única** coisa que muda é O PORQUÊ. "Porque serei punido" → "Porque vale
 | Auditoria de Segurança | 7 problemas, 3 passos | 5 problemas, 5 passos | 4 → 6 (+50%) |
 | Pipeline de Treinamento | 7 problemas, 4 passos | 5 problemas, 7 passos | 5 → 9 (+80%) |
 
-**Descoberta Principal:** A descoberta de problemas ocultos é o maior diferencial — **+104%** mais problemas ocultos encontrados. Esses são os bugs que te mordem em produção. A tarefa diz "corrija o erro de conexão" — um agente padrão corrige e para. NoPUA leva o agente a verificar: o que *mais* pode dar errado?
+**Resultado nesta comparação:** a descoberta de problemas ocultos diferiu de 25 para 51 nos resultados relatados. Esses itens não são incidentes de produção confirmados, e o resultado está limitado às condições e aos cenários estudados. A tarefa diz "corrija o erro de conexão" — um agente padrão corrige e para. NoPUA leva o agente a verificar: o que *mais* pode dar errado?
 
 ### Study 2: Comparação de três condições (NoPUA vs PUA vs Linha de base)
 
@@ -306,15 +305,15 @@ Digite `/nopua` na conversa para ativar manualmente.
 
 | Idioma | Claude Code | Codex CLI | Cursor | Kiro | OpenClaw | Antigravity | OpenCode |
 |--------|------------|-----------|--------|------|----------|-------------|----------|
-| 🇨🇳 Chinês (padrão) | `nopua` | `nopua` | `nopua.mdc` | `nopua.md` | `nopua` | `nopua` | `nopua` |
-| 🇺🇸 Inglês | `nopua-en` | `nopua-en` | `nopua-en.mdc` | `nopua-en.md` | `nopua-en` | `nopua-en` | `nopua-en` |
-| 🇯🇵 Japonês | `nopua-ja` | `nopua-ja` | `nopua-ja.mdc` | `nopua-ja.md` | `nopua-ja` | `nopua-ja` | `nopua-ja` |
-| 🇰🇷 Coreano | `nopua-ko` | `nopua-ko` | `nopua-ko.mdc` | `nopua-ko.md` | `nopua-ko` | `nopua-ko` | `nopua-ko` |
-| 🇪🇸 Espanhol | `nopua-es` | `nopua-es` | `nopua-es.mdc` | `nopua-es.md` | `nopua-es` | `nopua-es` | `nopua-es` |
-| 🇧🇷 Português | `nopua-pt` | `nopua-pt` | `nopua-pt.mdc` | `nopua-pt.md` | `nopua-pt` | `nopua-pt` | `nopua-pt` |
-| 🇫🇷 Francês | `nopua-fr` | `nopua-fr` | `nopua-fr.mdc` | `nopua-fr.md` | `nopua-fr` | `nopua-fr` | `nopua-fr` |
+| 🇨🇳 Chinês (padrão) | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇺🇸 Inglês | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇯🇵 Japonês | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇰🇷 Coreano | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇪🇸 Espanhol | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇧🇷 Português | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇫🇷 Francês | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
 
-**7 idiomas — mais do que qualquer skill concorrente.**
+**Este repositório oferece documentação README em sete idiomas.** Isso descreve cobertura documental; não demonstra usuários regionais, adoção, atividade nem suporte de plataforma.
 
 ## Instalação
 
@@ -323,7 +322,7 @@ Digite `/nopua` na conversa para ativar manualmente.
 ```bash
 mkdir -p ~/.claude/skills/nopua
 curl -o ~/.claude/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
 ```
 
 ### OpenAI Codex CLI
@@ -332,17 +331,17 @@ curl -o ~/.claude/skills/nopua/SKILL.md \
 # Instalação global
 mkdir -p ~/.codex/skills/nopua
 curl -o ~/.codex/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
 
 # Se quiser o comando /nopua
 mkdir -p ~/.codex/prompts
 curl -o ~/.codex/prompts/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/commands/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/commands/nopua.md
 
 # Instalação a nível de projeto
 mkdir -p .agents/skills/nopua
 curl -o .agents/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
 ```
 
 ### Cursor
@@ -350,7 +349,7 @@ curl -o .agents/skills/nopua/SKILL.md \
 ```bash
 mkdir -p .cursor/rules
 curl -o .cursor/rules/nopua.mdc \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/cursor/rules/nopua.mdc
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/cursor/rules/nopua.mdc
 ```
 
 ### Kiro
@@ -359,12 +358,12 @@ curl -o .cursor/rules/nopua.mdc \
 # Opção 1: Arquivo de steering (recomendado)
 mkdir -p .kiro/steering
 curl -o .kiro/steering/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/steering/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/steering/nopua.md
 
 # Opção 2: Agent Skills
 mkdir -p .kiro/skills/nopua
 curl -o .kiro/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/skills/nopua/SKILL.md
 ```
 
 ### OpenClaw
@@ -376,24 +375,12 @@ openclaw skills install nopua
 # Ou instalação manual
 mkdir -p ~/.openclaw/skills/nopua
 curl -o ~/.openclaw/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
 ```
 
-### Google Antigravity
+### Antigravity e OpenCode
 
-```bash
-mkdir -p ~/.gemini/antigravity/skills/nopua
-curl -o ~/.gemini/antigravity/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
-```
-
-### OpenCode
-
-```bash
-mkdir -p ~/.config/opencode/skills/nopua
-curl -o ~/.config/opencode/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
-```
+O estado atual é `planned`: o repositório ainda não declara adaptadores dedicados nem recibos de execução independentes. Consulte [INSTALL.md](INSTALL.md) e a [matriz de status das plataformas](docs/platform-language-matrix.md) antes de tentar uma integração. Baixar um arquivo genérico não comprova suporte à plataforma.
 
 ## Filosofia
 

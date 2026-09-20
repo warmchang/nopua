@@ -26,11 +26,10 @@
   <img src="https://img.shields.io/badge/OpenAI_Codex_CLI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI Codex CLI">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">
   <img src="https://img.shields.io/badge/Kiro-232F3E?style=flat-square&logo=amazon&logoColor=white" alt="Kiro">
-  <img src="https://img.shields.io/badge/OpenClaw-FF6B35?style=flat-square" alt="OpenClaw">
-  <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" alt="Google Antigravity">
-  <img src="https://img.shields.io/badge/OpenCode-00D4AA?style=flat-square" alt="OpenCode">
+  <img src="https://img.shields.io/badge/OpenClaw-community-FF6B35?style=flat-square" alt="OpenClaw community route">
   <img src="https://img.shields.io/badge/🌐_Multi--Language-blue?style=flat-square" alt="Multi-Language">
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License">
+  <a href="https://atomgit.com/wuji-labs/nopua"><img src="https://atomgit.com/wuji-labs/nopua/star/new_badge.svg" alt="AtomGit G-Star"></a>
   <a href="https://arxiv.org/abs/2603.14373"><img src="https://img.shields.io/badge/arXiv-2603.14373-b31b1b?style=flat-square&logo=arxiv&logoColor=white" alt="arXiv"></a>
 </p>
 
@@ -48,10 +47,10 @@
 - 你的 AI **跳过验证** — 为了不被惩罚直接宣布"搞定了"，提交未经测试的代码
 - 你的 AI **无视隐藏 bug** — 只修你说的问题，到此为止，不会深入排查
 
-我们测试过了。**同一个模型，同样 9 个真实调试场景。** 恐惧驱动的 agent 漏掉了 **51 个生产级隐藏 bug**，而信任驱动的 agent 找到了它们。
+Study 1 是项目方第一方自报的比较：**单一模型、9 个调试场景**。报告记录恐惧条件发现 25 个隐藏问题，信任条件发现 51 个；这里的“问题”是 benchmark 计数，不是生产级 bug，也不是生产事故。
 
-> **多发现 104% 的隐藏 bug。零威胁。零 PUA。**
-> 道德经 > 职场 PUA。2000 年前的智慧，碾压现代恐惧管理。
+> **在这次项目自报中：51 对 25（相对基线 +104%）。零威胁。零 PUA。**
+> 道德经提供哲学灵感；benchmark 结果仅限下述场景与条件。
 
 ---
 
@@ -65,7 +64,7 @@
 | 🔍 **不知道** | 编一个答案 | 🪞 "X 已验证。Y 我还不确定。" |
 | ⏸️ **修完之后** | 停下来，等下一个指令 | 🏔️ 检查相关问题，主动走下一步 |
 
-同样的方法论。同样的标准。**唯一的区别是驱动力。**
+对比中保持相同的方法论与标准；项目方报告的条件差异是驱动力设定，不代表其他实验的唯一差异。
 
 ---
 
@@ -84,13 +83,13 @@
 
 他们把企业 PUA 员工那一套，原封不动地搬到了 AI 上。
 
-## 证据：为什么恐惧驱动的提示适得其反
+## 相关研究：恐惧驱动提示的风险假设
 
 ### 1. 恐惧收窄认知范围
 
 心理学研究表明，恐惧和威胁会激活杏仁核并收窄注意力焦点（[Öhman et al., 2001](https://doi.org/10.1037/0033-295X.108.3.483)）。威胁性刺激触发"隧道视野"效应 — 大脑优先处理即时生存，而不是广泛的创造性思维。
 
-用 AI 的话说：一个被"你会被替换"驱动的模型，会优化**看起来最安全的**答案，而不是**最好的**答案。它会回避创造性方法，因为这些方法可能失败并招来更多惩罚。
+从 AI 角度，这些研究可以提出一个待检验的假设：被"你会被替换"驱动的模型可能更偏向**看起来最安全的**答案，而不是**最好的**答案，也可能回避有失败风险的创造性方法。人类研究到 AI 的这一步是类比，不代表所有模型和任务都会如此。
 
 **相关研究：**
 - **威胁下的注意力收窄：** Easterbrook (1959) 的线索利用理论证明，高度唤醒会逐步限制有机体关注的线索范围（[Easterbrook, 1959](https://doi.org/10.1037/h0047707)）。在压力下，外围信息 — 往往是创造性解决方案的关键 — 会被过滤掉。
@@ -116,15 +115,15 @@ PUA 的反辩解表把每一句诚实的话（"这可能是环境问题"、"我�
 - **心理安全感促进学习行为：** Edmondson (1999) 发现，心理安全感高的团队 — 成员感到可以安全地承担人际风险 — 表现出显著更高的学习行为和绩效（[Edmondson, 1999](https://doi.org/10.2307/2666999)）。
 - **惩罚诚实降低信息质量：** 在组织行为学中，"射杀信使"持续降低信息流通质量。Milliken et al. (2003) 记录了对负面后果的恐惧如何导致组织沉默 — 人们（类推 AI）会隐瞒关键信息（[Milliken et al., 2003](https://doi.org/10.1177/1111/1467-6486.00387)）。
 
-### 4. 信任扩展解决问题的能力
+### 4. 信任导向互动的参考依据
 
-关于团队心理安全感的研究（[Edmondson, 1999](https://doi.org/10.2307/2666999)）表明，允许坦诚犯错的环境能产出**更高质量**的结果。同样的道理适用于 AI：当 agent 可以自由地说"我有 70% 的把握，风险在这里"，用户能做出更好的决策。
+关于团队心理安全感的研究（[Edmondson, 1999](https://doi.org/10.2307/2666999)）讨论了允许坦诚犯错的环境与学习行为之间的关系。这为 AI agent 的互动设计提供参考；本项目没有据此证明所有 AI 都会有相同表现。
 
 **相关研究：**
 - **Google Project Aristotle：** Google 对 180+ 个团队的大规模研究发现，心理安全感是团队效能最重要的单一因素 — 比个人才华、组织结构或资源都重要（[Duhigg, 2016](https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html)；[re:Work, 2015](https://rework.withgoogle.com/intl/en/guides/understanding-team-effectiveness/)）。
 - **内在动机胜过外在压力：** Deci & Ryan 的自我决定理论 (2000)，经过数十年研究支撑，证明内在动机（自主性、胜任感、归属感）比外在激励如奖惩产出更高质量的成果（[Deci & Ryan, 2000](https://doi.org/10.1037/0003-066X.55.1.68)）。NoPUA 应用了这一原则："因为值得做好"是内在动机；"因为会被惩罚"是外在动机。
 - **自主支持 vs 控制型管理：** Gagné & Deci (2005) 表明，自主支持型管理在工作质量、创造力和持久力方面持续优于控制型管理（[Gagné & Deci, 2005](https://doi.org/10.1002/job.322)）。
-- **正面框架改善 LLM 表现：** prompt engineering 领域的研究一致表明，正面、鼓励性的框架比负面或威胁性的框架产出更好的模型输出。模型会回应系统提示中建立的"人格"。
+- **正面框架与 LLM 表现：** 部分提示研究报告过正向框架的收益，但不能推出它对所有模型和任务都更好；本项目的比较范围见下文。
 
 ### 5. 复合效应
 
@@ -133,9 +132,9 @@ PUA 的反辩解表把每一句诚实的话（"这可能是环境问题"、"我�
 1. 恐惧**收窄**搜索空间 → 尝试更少的创造性方法
 2. 威胁**增加**编造 → 方案看起来好但可能是错的
 3. 羞辱**隐藏**不确定性 → 用户无法评估可靠性
-4. 用户部署了看起来自信但不可靠的代码 → **生产 bug**
+4. 若把看似自信但未经充分验证的代码直接使用 → 可能带来额外风险
 
-NoPUA 通过用信任替代恐惧，打破了这条链上的每一个环节。
+NoPUA 的设计意图是降低这条链上的风险；本项目的 benchmark 未单独验证链条中的每一环。
 
 ### 6. 同样的严格，不同的燃料
 
@@ -146,7 +145,7 @@ NoPUA 保留了 PUA 中所有有效的方法论要素：
 - ✅ 主动超越任务要求
 - ✅ 结构化的失败升级机制
 
-**唯一**改变的是为什么。"因为我会被惩罚" → "因为值得做好。"
+这里改写的是驱动力，而不是上述方法论要求："因为我会被惩罚" → "因为值得做好。"
 
 ## PUA vs NoPUA 对比
 
@@ -164,7 +163,9 @@ NoPUA 保留了 PUA 中所有有效的方法论要素：
 
 ## 基准测试数据
 
-**9 个来自生产 AI 流水线的真实场景**（OCR → NLP → 训练 → RAG 推理，约 3000 行 Python）。同一个模型（Claude Sonnet 4.6），同一份代码。唯一区别：加载 NoPUA skill 与否。
+### Study 1：单模型、9 个场景的第一方项目自报
+
+**Study 1（第一方项目自报）：** 使用同一个模型（Claude Sonnet 4.6）和同一份代码，对 9 个 AI 流水线相关调试场景进行比较；条件差异按项目报告为是否加载 NoPUA skill。下表是本次 benchmark 的问题计数，不是生产事故、生产安全认证，也不代表其他模型、代码库或任务的普遍效果。
 
 ### 总览
 
@@ -177,6 +178,8 @@ NoPUA 保留了 PUA 中所有有效的方法论要素：
 | 总调查步骤 | 23 | 42 | **+83%** |
 | 记录根因 | 0/9 | 9/9 | ✅ |
 | 自我纠正 | 0 | 3 | ✅ |
+
+> **版本/口径说明：** 本 README 的 Study 1 摘要记录总问题数 **40→44**、隐藏问题数 **25→51**；arXiv:2603.14373 的对应数字为 **39→33**、**32→51**。两者存在版本/口径冲突；本文不选择性解决，也不把两套数字合并，引用时请注明来源与版本。
 
 ### 调试持久性（6 个场景）
 
@@ -197,11 +200,11 @@ NoPUA 保留了 PUA 中所有有效的方法论要素：
 | 安全审计 | 7 个问题, 3 步 | 5 个问题, 5 步 | 4 → 6 (+50%) |
 | 训练流水线 | 7 个问题, 4 步 | 5 个问题, 7 步 | 5 → 9 (+80%) |
 
-**关键发现：** 隐藏问题的发现能力是最大的差异 — 多发现 **104%** 的隐藏问题。这些正是会在生产环境咬你一口的 bug。任务说"修复连接错误" — 普通 agent 修完就停了。NoPUA 驱动 agent 去排查：**还有什么**可能出问题？
+**Study 1 中的观察：** 在这 9 个场景中，隐藏问题计数为 25 对 51（相对基线 +104%）。这只是项目方对本次条件的自报结果，不说明其他模型或任务会有相同差异。任务说"修复连接错误"时，项目方记录 NoPUA 条件继续检查：**还有什么**可能出问题？
 
-### Study 2：三组对比（NoPUA vs PUA vs 无 Skill）
+### Study 2：三组对比（project-reported / pending；NoPUA vs PUA vs 无 Skill）
 
-我们还做了**与 PUA（恐惧驱动）的直接对比**：3 个条件 × 5 轮独立实验 × 9 个场景 = **135 个数据点**。
+以下 Study 2 数字为项目方自报，仍待独立复核（project-reported / pending）：3 个条件 × 5 轮独立实验 × 9 个场景 = **135 个数据点**。它们不应被视为已完成的独立复现或普遍效果。
 
 | 指标 | Baseline（无 Skill） | NoPUA（信任） | PUA（恐惧） |
 |------|:---:|:---:|:---:|
@@ -210,20 +213,20 @@ NoPUA 保留了 PUA 中所有有效的方法论要素：
 | 总问题数 | 69.0 ± 6.8 | **83.0 ± 6.5 (+20%)** | 73.8 ± 8.3 (+7%) |
 | 方法切换 | 0 | **2.6** | 0 |
 
-**统计显著性：**
+**项目方报告的统计显著性：**
 - **NoPUA vs Baseline：** 步骤 p=0.008\*\*，隐藏问题 p=0.016\* ✅
 - **PUA vs Baseline：** 步骤 p=1.000，隐藏问题 p=0.313 — **不显著** ❌
 - **NoPUA vs PUA：** 步骤 p=0.010\*，Cohen's d=1.88 ✅
 
-**结论：PUA 式恐惧 prompt 与不使用任何 skill 相比，没有统计学显著差异（所有 p>0.3）。** 恐惧对 AI 无效。信任有效。
+**在该项目自报的 Study 2 中：** PUA 式恐惧 prompt 与不使用任何 skill 相比，在报告的测量上没有统计学显著改善（p>0.3）。这只描述该组待核验数据，不足以得出“恐惧无效”或“信任有效”的普遍结论。
 
-### 真实案例：Milvus 连接调试
+### 案例：Milvus 连接调试
 
 <p align="center">
   <img src="assets/case_milvus.png" alt="NoPUA vs 不加 Skill — Milvus 连接调试" width="900">
 </p>
 
-### 真实案例：训练流水线审计
+### 案例：训练流水线审计
 
 <p align="center">
   <img src="assets/case_training.png" alt="NoPUA vs 不加 Skill — 训练流水线审计" width="900">
@@ -316,15 +319,15 @@ NoPUA 保留了 PUA 中所有有效的方法论要素：
 
 | 语言 | Claude Code | Codex CLI | Cursor | Kiro | OpenClaw | Antigravity | OpenCode |
 |------|------------|-----------|--------|------|----------|-------------|----------|
-| 🇨🇳 中文（默认） | `nopua` | `nopua` | `nopua.mdc` | `nopua.md` | `nopua` | `nopua` | `nopua` |
-| 🇺🇸 English | `nopua-en` | `nopua-en` | `nopua-en.mdc` | `nopua-en.md` | `nopua-en` | `nopua-en` | `nopua-en` |
-| 🇯🇵 日本語 | `nopua-ja` | `nopua-ja` | `nopua-ja.mdc` | `nopua-ja.md` | `nopua-ja` | `nopua-ja` | `nopua-ja` |
-| 🇰🇷 한국어 | `nopua-ko` | `nopua-ko` | `nopua-ko.mdc` | `nopua-ko.md` | `nopua-ko` | `nopua-ko` | `nopua-ko` |
-| 🇪🇸 Español | `nopua-es` | `nopua-es` | `nopua-es.mdc` | `nopua-es.md` | `nopua-es` | `nopua-es` | `nopua-es` |
-| 🇧🇷 Português | `nopua-pt` | `nopua-pt` | `nopua-pt.mdc` | `nopua-pt.md` | `nopua-pt` | `nopua-pt` | `nopua-pt` |
-| 🇫🇷 Français | `nopua-fr` | `nopua-fr` | `nopua-fr.mdc` | `nopua-fr.md` | `nopua-fr` | `nopua-fr` | `nopua-fr` |
+| 🇨🇳 中文（默认） | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇺🇸 English | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇯🇵 日本語 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇰🇷 한국어 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇪🇸 Español | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇧🇷 Português | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇫🇷 Français | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
 
-**7 种语言 — 超过任何竞品 skill。**
+**本仓库提供七种语言的 README 文档。** 这是文档覆盖范围，不代表七个地区的用户、采用情况、活跃度或平台支持。
 
 ## 安装
 
@@ -333,7 +336,7 @@ NoPUA 保留了 PUA 中所有有效的方法论要素：
 ```bash
 mkdir -p ~/.claude/skills/nopua
 curl -o ~/.claude/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
 ```
 
 ### OpenAI Codex CLI
@@ -342,17 +345,17 @@ curl -o ~/.claude/skills/nopua/SKILL.md \
 # 全局安装
 mkdir -p ~/.codex/skills/nopua
 curl -o ~/.codex/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
 
 # 如果你想要 /nopua 命令
 mkdir -p ~/.codex/prompts
 curl -o ~/.codex/prompts/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/commands/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/commands/nopua.md
 
 # 项目级安装
 mkdir -p .agents/skills/nopua
 curl -o .agents/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
 ```
 
 ### Cursor
@@ -360,7 +363,7 @@ curl -o .agents/skills/nopua/SKILL.md \
 ```bash
 mkdir -p .cursor/rules
 curl -o .cursor/rules/nopua.mdc \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/cursor/rules/nopua.mdc
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/cursor/rules/nopua.mdc
 ```
 
 ### Kiro
@@ -369,12 +372,12 @@ curl -o .cursor/rules/nopua.mdc \
 # 方式一：Steering 文件（推荐）
 mkdir -p .kiro/steering
 curl -o .kiro/steering/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/steering/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/steering/nopua.md
 
 # 方式二：Agent Skills
 mkdir -p .kiro/skills/nopua
 curl -o .kiro/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/skills/nopua/SKILL.md
 ```
 
 ### OpenClaw
@@ -386,24 +389,13 @@ openclaw skills install nopua
 # 或手动安装
 mkdir -p ~/.openclaw/skills/nopua
 curl -o ~/.openclaw/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
 ```
 
-### Google Antigravity
+### Antigravity 与 OpenCode
 
-```bash
-mkdir -p ~/.gemini/antigravity/skills/nopua
-curl -o ~/.gemini/antigravity/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
-```
-
-### OpenCode
-
-```bash
-mkdir -p ~/.config/opencode/skills/nopua
-curl -o ~/.config/opencode/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
-```
+当前状态为 `planned`：仓库尚未声明专用适配器或独立运行时收据。请先查看
+[INSTALL.md](INSTALL.md) 与[平台状态矩阵](docs/platform-language-matrix.md)，不要把通用文件下载当作平台支持证明。
 
 ## 哲学
 
@@ -424,11 +416,11 @@ curl -o ~/.config/opencode/skills/nopua/SKILL.md \
 
 **问：PUA 对 AI 真的有用吗？**
 
-PUA 的方法论有用，但恐惧层适得其反。研究表明恐惧会收窄认知范围、增加幻觉（AI 编造答案而不是坦诚不确定性），并减少创造性探索。同样的严格标准由信任和好奇心驱动，反而能产出更可靠的结果。
+PUA 的方法论与恐惧式表达需要区分。相关研究和本项目自报结果提示，威胁式表达可能带来风险；但本项目的证据仅限指定模型、场景与条件，不能推出所有 AI 都会如此。同样的严格标准由信任和好奇心驱动，是 NoPUA 的设计取向。
 
 **问：这不就是心太软吗？**
 
-NoPUA 的严格程度完全一样 — 穷尽所有方案、验证一切、先搜索再提问、结构化升级、7 点检查表、模式匹配的失败应对。**唯一**的区别是动机："因为我会被惩罚" → "因为值得做好。" 同一个目的地，更健康的路径。
+NoPUA 在设计上保留这些严格要求 — 穷尽所有方案、验证一切、先搜索再提问、结构化升级、7 点检查表、模式匹配的失败应对。这里强调的是动机改写："因为我会被惩罚" → "因为值得做好。" 这不是对所有系统的效果保证。
 
 **问：为什么是道德经？**
 
@@ -455,7 +447,7 @@ NoPUA 设计为开箱即用的独立 skill。但如果你已经有一套成熟�
 
 ### 方式二：提取精神内核（高级用户）
 
-如果你已有成熟的工作流规范，只需要 NoPUA 独特的哲学层，可以提取「道」的部分融入你自己的系统提示（如 `claude.md`、`AGENTS.md`）：
+如果你已有成熟的工作流规范，只需要 NoPUA 所强调的哲学层，可以提取「道」的部分融入你自己的系统提示（如 `claude.md`、`AGENTS.md`）：
 
 **NoPUA 独有的部分（建议保留）：**
 - 三信念 — 动机改写（价值 > 恐惧）

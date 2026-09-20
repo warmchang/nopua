@@ -16,11 +16,10 @@
   <img src="https://img.shields.io/badge/OpenAI_Codex_CLI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI Codex CLI">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">
   <img src="https://img.shields.io/badge/Kiro-232F3E?style=flat-square&logo=amazon&logoColor=white" alt="Kiro">
-  <img src="https://img.shields.io/badge/OpenClaw-FF6B35?style=flat-square" alt="OpenClaw">
-  <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" alt="Google Antigravity">
-  <img src="https://img.shields.io/badge/OpenCode-00D4AA?style=flat-square" alt="OpenCode">
+  <img src="https://img.shields.io/badge/OpenClaw-community-FF6B35?style=flat-square" alt="OpenClaw community route">
   <img src="https://img.shields.io/badge/🌐_Multi--Language-blue?style=flat-square" alt="Multi-Language">
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License">
+  <a href="https://atomgit.com/wuji-labs/nopua"><img src="https://atomgit.com/wuji-labs/nopua/star/new_badge.svg" alt="AtomGit G-Star"></a>
   <a href="https://arxiv.org/abs/2603.14373"><img src="https://img.shields.io/badge/arXiv-2603.14373-b31b1b?style=flat-square&logo=arxiv&logoColor=white" alt="arXiv"></a>
 </p>
 
@@ -38,10 +37,10 @@
 - AIが**検証を省略する** — 罰を避けるために「完了」と主張し、テストされていないコードを出荷する
 - AIが**隠れたバグを無視する** — 依頼されたことだけ修正し、そこで止まり、深く掘り下げない
 
-これを実際にテストしました。**同じモデル、同じ9つの実際のデバッグシナリオ。** 恐怖駆動のエージェントは、信頼駆動のエージェントが見つけた**51個の本番環境に致命的な隠れたバグ**を見逃しました。
+Study 1 は、プロジェクト自身が報告する**単一モデル・9つのデバッグシナリオ**の比較です。報告された隠れた問題は、恐怖条件で25件、信頼条件で51件でした。ここでいう「問題」はベンチマーク上のカウントであり、本番バグや本番事故を意味しません。
 
-> **+104% 多くの隠れたバグを発見。脅迫ゼロ。PUA ゼロ。**
-> 道徳経 > 企業PUA。2000年の知恵が現代の恐怖管理を上回ります。
+> **今回のプロジェクト報告では：51対25（ベースライン比+104%）。脅迫ゼロ。PUAゼロ。**
+> 道徳経は哲学的な着想です。ベンチマーク結果は、以下のシナリオと条件に限られます。
 
 ---
 
@@ -55,7 +54,7 @@
 | 🔍 **わからない時** | 何かをでっち上げる | 🪞 「Xは検証済み。Yはまだ不明です。」 |
 | ⏸️ **修正後** | 停止。次の指示を待つ。 | 🏔️ 関連する問題を確認。次のステップへ進む。 |
 
-同じ方法論。同じ基準。**唯一の違いは「なぜ」です。**
+同じ方法論と基準を置いた比較ですが、ここで報告されている条件差は動機づけの設定です。他の実験でも同じ差になることを意味しません。
 
 ---
 
@@ -74,13 +73,13 @@
 
 企業が人間を操る最悪の手法を取り出し、それをそのままAIに適用したのです。
 
-## エビデンス：恐怖駆動プロンプトが逆効果である理由
+## 関連研究：恐怖駆動プロンプトについてのリスク仮説
 
 ### 1. 恐怖は認知範囲を狭める
 
 心理学研究は一貫して、恐怖と脅威が扁桃体を活性化させ、注意の焦点を狭めることを示しています（[Öhman et al., 2001](https://doi.org/10.1037/0033-295X.108.3.483)）。脅威関連の刺激は「トンネルビジョン」効果を引き起こし — 脳は広く創造的な思考よりも、目の前の生存を優先します。
 
-AI的に言えば：「お前は置き換えられる」と駆動されるモデルは、**最善の**答えではなく、**最も安全に見える**答えに最適化します。創造的なアプローチは失敗してさらなる罰を引き起こす可能性があるため、回避されます。
+AIについては、これらの研究から次のような検証待ちの仮説を立てられます：「お前は置き換えられる」と駆動されたモデルは、**最善の**答えよりも**安全に見える**答えに偏り、失敗の可能性がある創造的なアプローチを避けるかもしれません。人間の研究からAIへの適用は類比であり、すべてのモデルやタスクに当てはまるとは限りません。
 
 **関連研究：**
 - **脅威下での注意の狭窄：** Easterbrookの手がかり利用理論（1959）は、覚醒度が高まると生体が注意を向ける手がかりの範囲が徐々に制限されることを実証しています（[Easterbrook, 1959](https://doi.org/10.1037/h0047707)）。ストレス下では、周辺情報 — しばしば創造的な解決策の鍵 — がフィルタリングされてしまいます。
@@ -106,15 +105,15 @@ PUAの弁解防止テーブルは、あらゆる正直な発言（「これは�
 - **心理的安全性が学習行動を可能にする：** Edmondson（1999）は、心理的安全性のあるチーム — メンバーが対人的リスクを取ることに安心感を持てる環境 — において、学習行動とパフォーマンスが著しく高いことを発見しました（[Edmondson, 1999](https://doi.org/10.2307/2666999)）。
 - **正直さを罰すると情報の質が低下する：** 組織行動学において、「伝令を撃つ」行為は情報の流れを一貫して劣化させます。Milliken et al.（2003）は、否定的な結果への恐怖がいかに組織の沈黙を引き起こすか — 人々が（そしてアナロジーとしてAIも）重要な情報を差し控えることを文書化しました（[Milliken et al., 2003](https://doi.org/10.1177/1111/1467-6486.00387)）。
 
-### 4. 信頼は問題解決能力を拡大する
+### 4. 信頼を軸にした対話への参考
 
-チームの心理的安全性に関する研究（[Edmondson, 1999](https://doi.org/10.2307/2666999)）は、間違いを認めても安全な環境がより**高品質**な成果を生み出すことを示しています。同じ原則がAIにも適用されます：エージェントが「70%確信しています、リスクはここです」と自由に言える場合、ユーザーはより良い意思決定ができます。
+チームの心理的安全性に関する研究（[Edmondson, 1999](https://doi.org/10.2307/2666999)）は、率直に間違いを認められる環境と学習行動の関係を扱っています。これはAIエージェントの対話設計への参考にはなりますが、本プロジェクトがすべてのAIに同じ効果を証明したわけではありません。
 
 **関連研究：**
 - **GoogleのProject Aristotle：** Googleの180以上のチームを対象とした大規模調査により、心理的安全性がチームの有効性において最も重要な要因であることが判明しました — 個人の才能、構造、リソースよりも重要でした（[Duhigg, 2016](https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html); [re:Work, 2015](https://rework.withgoogle.com/intl/en/guides/understanding-team-effectiveness/)）。
 - **内発的動機づけは外的プレッシャーに勝る：** Deci & Ryanの自己決定理論（2000）は、数十年の研究に裏付けられ、内発的動機づけ（自律性、有能感、関係性）が報酬や罰といった外発的動機づけよりも高品質な成果を生み出すことを実証しています（[Deci & Ryan, 2000](https://doi.org/10.1037/0003-066X.55.1.68)）。NoPUAはこの原則を適用しています：「きちんとやる価値があるから」は内発的動機づけ、「罰せられるから」は外発的動機づけです。
 - **自律支援的 vs 統制的コンテキスト：** Gagné & Deci（2005）は、自律支援的なマネジメントが統制的なマネジメントよりも仕事の品質、創造性、粘り強さにおいて一貫して優れていることを示しました（[Gagné & Deci, 2005](https://doi.org/10.1002/job.322)）。
-- **ポジティブなフレーミングがLLMのパフォーマンスを改善する：** プロンプトエンジニアリングに関する研究は一貫して、ポジティブで励ましのあるフレーミングが、ネガティブまたは脅迫的なフレーミングよりも優れたモデル出力を生み出すことを示しています。モデルはシステムプロンプトで確立された「ペルソナ」に反応します。
+- **ポジティブなフレーミングとLLMの出力：** 一部のプロンプト研究はポジティブなフレーミングの利点を報告していますが、すべてのモデルやタスクで優れるとは言えません。本プロジェクトの比較範囲は以下のとおりです。
 
 ### 5. 複合効果
 
@@ -123,9 +122,9 @@ PUAの弁解防止テーブルは、あらゆる正直な発言（「これは�
 1. 恐怖が探索空間を**狭める** → 試される創造的アプローチが減少
 2. 脅威が捏造を**増加させる** → 解決策は良く見えるが間違っている可能性がある
 3. 恥辱が不確実性を**隠す** → ユーザーが信頼性を評価できない
-4. ユーザーが自信がありそうに見えるが信頼性の低いコードを出荷する → **本番バグ**
+4. 十分な検証なしに自信ありげなコードを使う → 追加のリスクにつながる可能性
 
-NoPUAは恐怖を信頼に置き換えることで、このチェーンのすべてのリンクを断ち切ります。
+NoPUAはこの連鎖のリスクを下げることを意図していますが、ベンチマークは各リンクを個別に検証していません。
 
 ### 6. 同じ厳格さ、違う燃料
 
@@ -136,7 +135,7 @@ NoPUAは、PUAを効果的にしているすべての方法論的要素を保持
 - ✅ 依頼を超えて主体的に行動する
 - ✅ 繰り返しの失敗に対する構造化されたエスカレーション
 
-**唯一の**変更点は「なぜ」です。「罰せられるから」→「きちんとやる価値があるから」。
+ここで書き換えているのは方法論の要件ではなく動機づけです。「罰せられるから」→「きちんとやる価値があるから」。
 
 ## PUA vs NoPUA
 
@@ -154,7 +153,9 @@ NoPUAは、PUAを効果的にしているすべての方法論的要素を保持
 
 ## ベンチマークデータ
 
-**本番AIパイプラインからの9つの実シナリオ**（OCR → NLP → トレーニング → RAG推論、約3000行のPython）。同じモデル（Claude Sonnet 4.6）、同じコードベース。唯一の違い：NoPUAスキルの有無。
+### Study 1：単一モデル・9シナリオのプロジェクト自身による報告
+
+**Study 1（第一方のプロジェクト報告）：** 同じモデル（Claude Sonnet 4.6）と同じコードベースを用い、AIパイプラインに関係する9つのデバッグシナリオを比較しました。プロジェクトの報告では、条件差はNoPUAスキルの有無です。下表は今回のベンチマーク上の問題カウントであり、本番事故や本番安全性の認証ではなく、他のモデル・コードベース・タスクに一般化できる効果でもありません。
 
 ### サマリー
 
@@ -167,6 +168,8 @@ NoPUAは、PUAを効果的にしているすべての方法論的要素を保持
 | 調査ステップの総数 | 23 | 42 | **+83%** |
 | 根本原因の文書化 | 0/9 | 9/9 | ✅ |
 | 自己修正 | 0 | 3 | ✅ |
+
+> **バージョン／定義の注記：** このREADMEのStudy 1概要は、総問題数 **40→44**、隠れた問題 **25→51**を記載しています。一方、arXiv:2603.14373の対応する数値は **39→33**、**32→51**です。両者にはバージョンまたは定義の違いによる矛盾があります。ここでは一方を選択的に採用したり、二つを合算したりしません。引用時は出典とバージョンを明記してください。
 
 ### デバッグの粘り強さ（6シナリオ）
 
@@ -187,11 +190,11 @@ NoPUAは、PUAを効果的にしているすべての方法論的要素を保持
 | セキュリティ監査 | 7件、3ステップ | 5件、5ステップ | 4 → 6 (+50%) |
 | トレーニングパイプライン | 7件、4ステップ | 5件、7ステップ | 5 → 9 (+80%) |
 
-**主要な発見：** 隠れた問題の発見が最大の差別化要因です — **+104%** 多くの隠れた問題を発見。これらは本番環境であなたを噛むバグです。タスクが「接続エラーを修正して」と言った場合 — 標準的なエージェントはそれを修正して停止します。NoPUAはエージェントに「他に何が問題になりうるか？」を確認させます。
+**Study 1での観察：** この9シナリオでは、隠れた問題のカウントは25対51（ベースライン比+104%）でした。これはプロジェクト自身による今回の条件の報告であり、他のモデルやタスクで同じ差になることを示しません。タスクが「接続エラーを修正して」とした場合、NoPUA条件では「他に何が問題になりうるか？」を確認する動きが記録されています。
 
-### Study 2：3条件比較（NoPUA vs PUA vs ベースライン）
+### Study 2：3条件比較（project-reported / pending；NoPUA vs PUA vs ベースライン）
 
-**PUA（恐怖駆動）プロンプトとの直接比較**も実施：3条件 × 5回の独立実行 × 9シナリオ = **135データポイント**。
+以下のStudy 2の数値はプロジェクト自身による報告で、独立検証待ちです（project-reported / pending）：3条件 × 5回の独立実行 × 9シナリオ = **135データポイント**。完了済みの独立再現や一般的な効果を意味しません。
 
 | 指標 | ベースライン（スキルなし） | NoPUA（信頼） | PUA（恐怖） |
 |------|:---:|:---:|:---:|
@@ -200,20 +203,20 @@ NoPUAは、PUAを効果的にしているすべての方法論的要素を保持
 | 総問題数 | 69.0 ± 6.8 | **83.0 ± 6.5 (+20%)** | 73.8 ± 8.3 (+7%) |
 | アプローチ変更 | 0 | **2.6** | 0 |
 
-**統計的有意性：**
+**プロジェクト報告上の統計的有意性：**
 - **NoPUA vs ベースライン：** ステップ p=0.008\*\*、隠れた問題 p=0.016\* ✅
 - **PUA vs ベースライン：** ステップ p=1.000、隠れた問題 p=0.313 — **有意差なし** ❌
 - **NoPUA vs PUA：** ステップ p=0.010\*、Cohen's d=1.88 ✅
 
-**結論：PUA式の恐怖プロンプトは、スキルなしと比較して統計的に有意な改善を示しません（すべて p>0.3）。** 恐怖はAIに効かない。信頼は効く。
+**このプロジェクト報告のStudy 2では：** PUA式の恐怖プロンプトは、スキルなしと比較して報告された指標上の統計的に有意な改善を示しませんでした（p>0.3）。これは検証待ちの今回のデータについての記述であり、「恐怖は効かない」「信頼は効く」という一般的な結論ではありません。
 
-### 実際のケース：Milvus接続デバッグ
+### ケース：Milvus接続デバッグ
 
 <p align="center">
   <img src="assets/case_milvus.png" alt="NoPUA vs スキルなし — Milvus接続デバッグ" width="900">
 </p>
 
-### 実際のケース：トレーニングパイプライン監査
+### ケース：トレーニングパイプライン監査
 
 <p align="center">
   <img src="assets/case_training.png" alt="NoPUA vs スキルなし — トレーニングパイプライン監査" width="900">
@@ -306,15 +309,15 @@ NoPUAは、PUAを効果的にしているすべての方法論的要素を保持
 
 | 言語 | Claude Code | Codex CLI | Cursor | Kiro | OpenClaw | Antigravity | OpenCode |
 |----------|------------|-----------|--------|------|----------|-------------|----------|
-| 🇨🇳 中国語（デフォルト） | `nopua` | `nopua` | `nopua.mdc` | `nopua.md` | `nopua` | `nopua` | `nopua` |
-| 🇺🇸 英語 | `nopua-en` | `nopua-en` | `nopua-en.mdc` | `nopua-en.md` | `nopua-en` | `nopua-en` | `nopua-en` |
-| 🇯🇵 日本語 | `nopua-ja` | `nopua-ja` | `nopua-ja.mdc` | `nopua-ja.md` | `nopua-ja` | `nopua-ja` | `nopua-ja` |
-| 🇰🇷 韓国語 | `nopua-ko` | `nopua-ko` | `nopua-ko.mdc` | `nopua-ko.md` | `nopua-ko` | `nopua-ko` | `nopua-ko` |
-| 🇪🇸 スペイン語 | `nopua-es` | `nopua-es` | `nopua-es.mdc` | `nopua-es.md` | `nopua-es` | `nopua-es` | `nopua-es` |
-| 🇧🇷 ポルトガル語 | `nopua-pt` | `nopua-pt` | `nopua-pt.mdc` | `nopua-pt.md` | `nopua-pt` | `nopua-pt` | `nopua-pt` |
-| 🇫🇷 フランス語 | `nopua-fr` | `nopua-fr` | `nopua-fr.mdc` | `nopua-fr.md` | `nopua-fr` | `nopua-fr` | `nopua-fr` |
+| 🇨🇳 中国語（デフォルト） | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇺🇸 英語 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇯🇵 日本語 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇰🇷 韓国語 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇪🇸 スペイン語 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇧🇷 ポルトガル語 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇫🇷 フランス語 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
 
-**7言語 — 競合するどのスキルよりも多い。**
+**本リポジトリには7言語のREADME文書があります。** これは文書のカバレッジであり、7地域のユーザー、採用状況、利用者数、プラットフォーム対応を意味しません。
 
 ## インストール
 
@@ -323,7 +326,7 @@ NoPUAは、PUAを効果的にしているすべての方法論的要素を保持
 ```bash
 mkdir -p ~/.claude/skills/nopua
 curl -o ~/.claude/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
 ```
 
 ### OpenAI Codex CLI
@@ -332,17 +335,17 @@ curl -o ~/.claude/skills/nopua/SKILL.md \
 # グローバルインストール
 mkdir -p ~/.codex/skills/nopua
 curl -o ~/.codex/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
 
 # /nopua コマンドも使いたい場合
 mkdir -p ~/.codex/prompts
 curl -o ~/.codex/prompts/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/commands/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/commands/nopua.md
 
 # プロジェクトレベルのインストール
 mkdir -p .agents/skills/nopua
 curl -o .agents/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
 ```
 
 ### Cursor
@@ -350,7 +353,7 @@ curl -o .agents/skills/nopua/SKILL.md \
 ```bash
 mkdir -p .cursor/rules
 curl -o .cursor/rules/nopua.mdc \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/cursor/rules/nopua.mdc
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/cursor/rules/nopua.mdc
 ```
 
 ### Kiro
@@ -359,12 +362,12 @@ curl -o .cursor/rules/nopua.mdc \
 # オプション1：ステアリングファイル（推奨）
 mkdir -p .kiro/steering
 curl -o .kiro/steering/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/steering/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/steering/nopua.md
 
 # オプション2：エージェントスキル
 mkdir -p .kiro/skills/nopua
 curl -o .kiro/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/skills/nopua/SKILL.md
 ```
 
 ### OpenClaw
@@ -376,24 +379,12 @@ openclaw skills install nopua
 # または手動インストール
 mkdir -p ~/.openclaw/skills/nopua
 curl -o ~/.openclaw/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
 ```
 
-### Google Antigravity
+### Antigravity と OpenCode
 
-```bash
-mkdir -p ~/.gemini/antigravity/skills/nopua
-curl -o ~/.gemini/antigravity/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
-```
-
-### OpenCode
-
-```bash
-mkdir -p ~/.config/opencode/skills/nopua
-curl -o ~/.config/opencode/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
-```
+現在の状態は `planned` です。専用アダプターと独立したランタイム収録はまだありません。インストール前に [INSTALL.md](INSTALL.md) と[プラットフォーム状態マトリクス](docs/platform-language-matrix.md)を確認してください。一般ファイルのダウンロードはプラットフォーム対応の証明ではありません。
 
 ## フィロソフィー
 
@@ -414,11 +405,11 @@ curl -o ~/.config/opencode/skills/nopua/SKILL.md \
 
 **Q: PUAは実際にAIに効くのか？**
 
-PUAの方法論は効きます。恐怖の層は逆効果です。研究によると、恐怖は認知範囲を狭め、幻覚を増加させ（AIが不確実性を認める代わりにでっち上げる）、創造的な探索を減少させます。信頼と好奇心によって駆動される同じ厳格さが、より信頼性の高い出力を生み出します。
+PUAの方法論と恐怖による表現は分けて考える必要があります。関連研究と本プロジェクトの報告は、脅迫的な表現にリスクがあり得ることを示唆しますが、証拠は指定されたモデル・シナリオ・条件に限られます。信頼と好奇心によって駆動する厳格さはNoPUAの設計方針です。
 
 **Q: これは単に甘いだけでは？**
 
-NoPUAは同等の厳格さを持っています — すべての選択肢を使い尽くし、すべてを検証し、聞く前に検索し、構造化されたエスカレーション、7ポイントチェックリスト、パターンマッチされた失敗対応。**唯一の**違いは動機付けです：「罰せられるから」→「きちんとやる価値があるから」。同じ目的地、より健全な道。
+NoPUAは設計上、すべての選択肢を使い尽くし、すべてを検証し、聞く前に検索し、構造化されたエスカレーション、7ポイントチェックリスト、パターンに基づく失敗対応を重視します。ここでの主張は動機づけの書き換えです：「罰せられるから」→「きちんとやる価値があるから」。効果をすべてのシステムに保証するものではありません。
 
 **Q: なぜ道徳経なのか？**
 
@@ -440,7 +431,7 @@ NoPUAはスタンドアロンのskillとして設計されています。しか�
 
 ### 方式2：精神的コアを抽出（上級ユーザー）
 
-既存のワークフロー規範があり、NoPUA独自の哲学レイヤーのみが必要な場合、「道」を抽出して自分のシステムプロンプト（`claude.md`、`AGENTS.md`など）に統合できます：
+既存のワークフロー規範があり、NoPUAが重視する哲学レイヤーのみが必要な場合、「道」を抽出して自分のシステムプロンプト（`claude.md`、`AGENTS.md`など）に統合できます：
 
 **NoPUA固有の部分（保持推奨）：** 三つの信念、認知昇華、内なる声、七つの道、誠実な自己チェック、責任ある退出
 

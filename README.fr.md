@@ -16,11 +16,10 @@
   <img src="https://img.shields.io/badge/OpenAI_Codex_CLI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI Codex CLI">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">
   <img src="https://img.shields.io/badge/Kiro-232F3E?style=flat-square&logo=amazon&logoColor=white" alt="Kiro">
-  <img src="https://img.shields.io/badge/OpenClaw-FF6B35?style=flat-square" alt="OpenClaw">
-  <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" alt="Google Antigravity">
-  <img src="https://img.shields.io/badge/OpenCode-00D4AA?style=flat-square" alt="OpenCode">
+  <img src="https://img.shields.io/badge/OpenClaw-community-FF6B35?style=flat-square" alt="OpenClaw community route">
   <img src="https://img.shields.io/badge/🌐_Multi--Language-blue?style=flat-square" alt="Multi-Language">
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License">
+  <a href="https://atomgit.com/wuji-labs/nopua"><img src="https://atomgit.com/wuji-labs/nopua/star/new_badge.svg" alt="AtomGit G-Star"></a>
   <a href="https://arxiv.org/abs/2603.14373"><img src="https://img.shields.io/badge/arXiv-2603.14373-b31b1b?style=flat-square&logo=arxiv&logoColor=white" alt="arXiv"></a>
 </p>
 
@@ -38,9 +37,9 @@ Le skill d'agent IA le plus populaire en ce moment apprend à votre IA à craind
 - Votre IA **saute la vérification** — affirme « c'est fait » pour éviter la punition, livre du code non testé
 - Votre IA **ignore les bugs cachés** — corrige ce que vous avez demandé, s'arrête là, ne creuse pas plus
 
-Nous l'avons testé. **Même modèle, mêmes 9 scénarios réels de débogage.** L'agent motivé par la peur a manqué **51 bugs critiques cachés en production** que l'agent motivé par la confiance a trouvés.
+Dans une comparaison de première partie, avec **un seul modèle et 9 scénarios de débogage**, la condition fondée sur la peur a compté 25 problèmes cachés contre 51 pour la condition NoPUA. « Problème » désigne ici un élément compté dans le benchmark, et non un incident de production confirmé.
 
-> **+104% de bugs cachés trouvés en plus. Zéro menace. Zéro PUA.**
+> **Dans cet échantillon : 51 contre 25 problèmes cachés comptés. Zéro menace. Zéro PUA.**
 > 道德经 > PUA d'entreprise. Une sagesse vieille de 2000 ans surpasse la gestion par la peur moderne.
 
 ---
@@ -55,7 +54,7 @@ Nous l'avons testé. **Même modèle, mêmes 9 scénarios réels de débogage.**
 | 🔍 **Ne sait pas** | Invente quelque chose | 🪞 « J'ai vérifié X. Je ne sais pas encore Y. » |
 | ⏸️ **Après correction** | S'arrête. Attend le prochain ordre. | 🏔️ Vérifie les problèmes liés. Avance d'un pas. |
 
-Même méthodologie. Mêmes standards. **La seule différence est le pourquoi.**
+Même socle méthodologique. Mêmes standards. Le contraste conceptuel porte sur le cadrage de la motivation ; les résultats du benchmark restent limités aux conditions rapportées.
 
 ---
 
@@ -154,7 +153,7 @@ La **seule** chose qui change est le POURQUOI. « Parce que je serai puni » →
 
 ## Données de benchmark
 
-**9 scénarios réels issus d'un pipeline IA en production** (OCR → NLP → entraînement → inférence RAG, ~3000 lignes Python). Même modèle (Claude Sonnet 4.6), même codebase. Seule différence : skill NoPUA chargé ou non.
+**9 scénarios de débogage issus d'un pipeline décrit par l'étude d'origine comme dérivé de la production** (OCR → NLP → entraînement → inférence RAG, ~3000 lignes Python). Même modèle (Claude Sonnet 4.6), même base de code. La différence de condition rapportée est le chargement ou non du skill NoPUA ; cela ne constitue pas à lui seul une preuve causale indépendante.
 
 ### Résumé
 
@@ -187,7 +186,7 @@ La **seule** chose qui change est le POURQUOI. « Parce que je serai puni » →
 | Audit de sécurité | 7 problèmes, 3 étapes | 5 problèmes, 5 étapes | 4 → 6 (+50%) |
 | Pipeline d'entraînement | 7 problèmes, 4 étapes | 5 problèmes, 7 étapes | 5 → 9 (+80%) |
 
-**Constat clé :** La découverte de problèmes cachés est le plus grand facteur de différenciation — **+104%** de problèmes cachés trouvés en plus. Ce sont les bugs qui vous mordent en production. La tâche dit « corrige l'erreur de connexion » — un agent standard la corrige et s'arrête. NoPUA pousse l'agent à vérifier : quoi *d'autre* pourrait mal tourner ?
+**Constat dans cette comparaison :** la découverte de problèmes cachés diffère de 51 à 25 dans les sorties rapportées. Ces éléments ne sont pas des incidents de production confirmés et le résultat ne vaut que pour les conditions et scénarios étudiés. La tâche dit « corrige l'erreur de connexion » — un agent standard la corrige et s'arrête. NoPUA pousse l'agent à vérifier : quoi *d'autre* pourrait mal tourner ?
 
 ### Étude 2 : Comparaison à trois conditions (NoPUA vs PUA vs Référence)
 
@@ -306,15 +305,15 @@ Tapez `/nopua` dans la conversation pour activer manuellement.
 
 | Langue | Claude Code | Codex CLI | Cursor | Kiro | OpenClaw | Antigravity | OpenCode |
 |----------|------------|-----------|--------|------|----------|-------------|----------|
-| 🇨🇳 Chinois (par défaut) | `nopua` | `nopua` | `nopua.mdc` | `nopua.md` | `nopua` | `nopua` | `nopua` |
-| 🇺🇸 Anglais | `nopua-en` | `nopua-en` | `nopua-en.mdc` | `nopua-en.md` | `nopua-en` | `nopua-en` | `nopua-en` |
-| 🇯🇵 Japonais | `nopua-ja` | `nopua-ja` | `nopua-ja.mdc` | `nopua-ja.md` | `nopua-ja` | `nopua-ja` | `nopua-ja` |
-| 🇰🇷 Coréen | `nopua-ko` | `nopua-ko` | `nopua-ko.mdc` | `nopua-ko.md` | `nopua-ko` | `nopua-ko` | `nopua-ko` |
-| 🇪🇸 Espagnol | `nopua-es` | `nopua-es` | `nopua-es.mdc` | `nopua-es.md` | `nopua-es` | `nopua-es` | `nopua-es` |
-| 🇧🇷 Portugais | `nopua-pt` | `nopua-pt` | `nopua-pt.mdc` | `nopua-pt.md` | `nopua-pt` | `nopua-pt` | `nopua-pt` |
-| 🇫🇷 Français | `nopua-fr` | `nopua-fr` | `nopua-fr.mdc` | `nopua-fr.md` | `nopua-fr` | `nopua-fr` | `nopua-fr` |
+| 🇨🇳 Chinois (par défaut) | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇺🇸 Anglais | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇯🇵 Japonais | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇰🇷 Coréen | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇪🇸 Espagnol | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇧🇷 Portugais | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇫🇷 Français | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
 
-**7 langues — plus que tout skill concurrent.**
+**Ce dépôt fournit une documentation README en sept langues.** Cela décrit la couverture documentaire ; cela ne démontre ni des utilisateurs régionaux, ni l'adoption, ni l'activité, ni le support de plateforme.
 
 ## Installation
 
@@ -323,7 +322,7 @@ Tapez `/nopua` dans la conversation pour activer manuellement.
 ```bash
 mkdir -p ~/.claude/skills/nopua
 curl -o ~/.claude/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
 ```
 
 ### OpenAI Codex CLI
@@ -332,17 +331,17 @@ curl -o ~/.claude/skills/nopua/SKILL.md \
 # Installation globale
 mkdir -p ~/.codex/skills/nopua
 curl -o ~/.codex/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
 
 # Si vous voulez la commande /nopua
 mkdir -p ~/.codex/prompts
 curl -o ~/.codex/prompts/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/commands/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/commands/nopua.md
 
 # Installation au niveau du projet
 mkdir -p .agents/skills/nopua
 curl -o .agents/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
 ```
 
 ### Cursor
@@ -350,7 +349,7 @@ curl -o .agents/skills/nopua/SKILL.md \
 ```bash
 mkdir -p .cursor/rules
 curl -o .cursor/rules/nopua.mdc \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/cursor/rules/nopua.mdc
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/cursor/rules/nopua.mdc
 ```
 
 ### Kiro
@@ -359,12 +358,12 @@ curl -o .cursor/rules/nopua.mdc \
 # Option 1 : Fichier de pilotage (recommandé)
 mkdir -p .kiro/steering
 curl -o .kiro/steering/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/steering/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/steering/nopua.md
 
 # Option 2 : Agent Skills
 mkdir -p .kiro/skills/nopua
 curl -o .kiro/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/skills/nopua/SKILL.md
 ```
 
 ### OpenClaw
@@ -376,24 +375,12 @@ openclaw skills install nopua
 # Ou installation manuelle
 mkdir -p ~/.openclaw/skills/nopua
 curl -o ~/.openclaw/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
 ```
 
-### Google Antigravity
+### Antigravity et OpenCode
 
-```bash
-mkdir -p ~/.gemini/antigravity/skills/nopua
-curl -o ~/.gemini/antigravity/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
-```
-
-### OpenCode
-
-```bash
-mkdir -p ~/.config/opencode/skills/nopua
-curl -o ~/.config/opencode/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
-```
+Le statut actuel est `planned` : le dépôt ne déclare pas encore d'adaptateur dédié ni de reçu d'exécution indépendant. Consultez [INSTALL.md](INSTALL.md) et la [matrice de statut des plateformes](docs/platform-language-matrix.md) avant toute intégration. Télécharger un fichier générique ne prouve pas la prise en charge de la plateforme.
 
 ## Philosophie
 
