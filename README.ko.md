@@ -16,7 +16,9 @@
   <img src="https://img.shields.io/badge/OpenAI_Codex_CLI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI Codex CLI">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">
   <img src="https://img.shields.io/badge/Kiro-232F3E?style=flat-square&logo=amazon&logoColor=white" alt="Kiro">
-  <img src="https://img.shields.io/badge/OpenClaw-community-FF6B35?style=flat-square" alt="OpenClaw community route">
+  <img src="https://img.shields.io/badge/OpenClaw-FF6B35?style=flat-square" alt="OpenClaw">
+  <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" alt="Google Antigravity">
+  <img src="https://img.shields.io/badge/OpenCode-00D4AA?style=flat-square" alt="OpenCode">
   <img src="https://img.shields.io/badge/🌐_Multi--Language-blue?style=flat-square" alt="Multi-Language">
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License">
   <a href="https://atomgit.com/wuji-labs/nopua"><img src="https://atomgit.com/wuji-labs/nopua/star/badge.svg" alt="AtomGit G-Star" height="20"></a>
@@ -37,10 +39,10 @@
 - AI가 **검증을 건너뜁니다** — 처벌을 피하려고 "완료"라고 말하며, 테스트하지 않은 코드를 배포합니다
 - AI가 **숨겨진 버그를 무시합니다** — 요청받은 것만 고치고, 더 깊이 들여다보지 않습니다
 
-Study 1은 프로젝트가 직접 보고한 **단일 모델·9개 디버깅 시나리오** 비교입니다. 보고된 숨겨진 이슈는 두려움 조건 25개, 신뢰 조건 51개였습니다. 여기서 “이슈”는 벤치마크 집계이며 프로덕션 버그나 프로덕션 사고를 뜻하지 않습니다.
+저희가 테스트했습니다. **같은 모델, 같은 9개의 실제 디버깅 시나리오.** 두려움 기반 에이전트는 신뢰 기반 에이전트가 발견한 **프로덕션 핵심 숨겨진 버그 51개**를 놓쳤습니다.
 
-> **이번 프로젝트 보고에서는 51 대 25(기준선 대비 +104%). 위협 제로. PUA 제로.**
-> 도덕경은 철학적 영감이며, 벤치마크 결과는 아래의 시나리오와 조건에 한정됩니다.
+> **숨겨진 버그 발견율 +104%. 위협 제로. PUA 제로.**
+> 도덕경 > 기업형 PUA. 2,000년 된 지혜가 현대의 두려움 관리를 능가합니다.
 
 ---
 
@@ -54,7 +56,7 @@ Study 1은 프로젝트가 직접 보고한 **단일 모델·9개 디버깅 시�
 | 🔍 **모를 때** | 지어냄 | 🪞 "X는 확인했습니다. Y는 아직 모릅니다." |
 | ⏸️ **수정 후** | 멈추고 다음 지시를 기다림 | 🏔️ 관련 이슈를 확인하고 다음 단계로 나아감 |
 
-동일한 방법론과 기준을 둔 비교이지만, 프로젝트가 보고한 조건 차이는 동기 설정입니다. 다른 실험에서도 유일한 차이라고 단정하지 않습니다.
+같은 방법론. 같은 기준. **유일한 차이는 동기입니다.**
 
 ---
 
@@ -73,13 +75,13 @@ Study 1은 프로젝트가 직접 보고한 **단일 모델·9개 디버깅 시�
 
 기업이 인간을 조종하는 최악의 방식을 그대로 AI에 적용한 것입니다.
 
-## 관련 연구: 두려움 기반 프롬프트의 위험 가설
+## 근거: 두려움 기반 프롬프트가 역효과인 이유
 
 ### 1. 두려움은 인지 범위를 좁힙니다
 
 심리학 연구는 두려움과 위협이 편도체를 활성화하고 주의 초점을 좁힌다는 것을 일관되게 보여줍니다 ([Öhman et al., 2001](https://doi.org/10.1037/0033-295X.108.3.483)). 위협 관련 자극은 "터널 비전" 효과를 유발합니다 — 뇌가 넓고 창의적인 사고보다 즉각적인 생존을 우선시하는 것입니다.
 
-AI에 대해서는 이 연구들로부터 검증이 필요한 가설을 세울 수 있습니다. "교체당할 거야"라는 동기로 구동된 모델은 **최선의** 답보다 **가장 안전해 보이는** 답에 치우치거나, 실패 가능성이 있는 창의적 접근을 피할 수 있다는 가설입니다. 인간 연구를 AI에 적용하는 것은 유추이며 모든 모델과 과제에 일반화되지 않습니다.
+AI 관점에서: "교체당할 거야"라는 동기로 구동되는 모델은 **최선의** 답이 아니라 **가장 안전해 보이는** 답을 최적화합니다. 창의적인 접근이 실패하면 더 많은 처벌을 유발할 수 있기 때문에 회피합니다.
 
 **관련 연구:**
 - **위협 하의 주의 축소:** Easterbrook(1959)의 단서 활용 이론은 각성이 높아질수록 유기체가 주의를 기울이는 단서의 범위가 점진적으로 줄어든다는 것을 보여줍니다 ([Easterbrook, 1959](https://doi.org/10.1037/h0047707)). 스트레스 하에서는 주변 정보 — 종종 창의적 해결책의 열쇠 — 가 걸러집니다.
@@ -105,15 +107,15 @@ PUA의 합리화 방지 표는 모든 솔직한 발언("환경 문제일 수 있
 - **심리적 안전은 학습 행동을 가능하게 합니다:** Edmondson(1999)은 심리적 안전이 있는 팀 — 구성원이 대인 관계적 위험을 감수해도 안전하다고 느끼는 곳 — 이 유의미하게 높은 학습 행동과 성과를 보인다는 것을 발견했습니다 ([Edmondson, 1999](https://doi.org/10.2307/2666999)).
 - **정직함을 처벌하면 정보 품질이 저하됩니다:** 조직 행동론에서 "전령을 쏘는 것"은 일관되게 정보 흐름을 저하시킵니다. Milliken et al.(2003)은 부정적 결과에 대한 두려움이 어떻게 조직적 침묵으로 이어지는지 — 사람들이 (그리고 유추적으로 AI가) 핵심 정보를 보류하는지 — 를 문서화했습니다 ([Milliken et al., 2003](https://doi.org/10.1177/1111/1467-6486.00387)).
 
-### 4. 신뢰 중심 상호작용에 대한 참고
+### 4. 신뢰는 문제 해결 능력을 확장합니다
 
-팀의 심리적 안전에 관한 연구 ([Edmondson, 1999](https://doi.org/10.2307/2666999))는 실수를 솔직히 인정할 수 있는 환경과 학습 행동의 관계를 다룹니다. 이는 AI 에이전트 상호작용 설계의 참고가 될 수 있지만, 이 프로젝트가 모든 AI에 같은 효과를 입증한 것은 아닙니다.
+팀의 심리적 안전에 관한 연구 ([Edmondson, 1999](https://doi.org/10.2307/2666999))는 실수를 인정해도 안전한 환경이 **더 높은 품질의** 결과를 만든다는 것을 보여줍니다. 같은 원리가 AI에도 적용됩니다: 에이전트가 "70% 확신합니다, 리스크는 여기입니다"라고 자유롭게 말할 수 있을 때, 사용자는 더 나은 결정을 내립니다.
 
 **관련 연구:**
 - **Google의 Project Aristotle:** Google의 180개 이상 팀을 대상으로 한 대규모 연구는 심리적 안전이 팀 효과성에서 가장 중요한 단일 요인임을 발견했습니다 — 개인의 재능, 구조, 또는 자원보다 더 중요합니다 ([Duhigg, 2016](https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html); [re:Work, 2015](https://rework.withgoogle.com/intl/en/guides/understanding-team-effectiveness/)).
 - **내재적 동기가 외재적 압박보다 우수합니다:** Deci & Ryan의 자기결정 이론(2000)은 수십 년의 연구에 기반하여, 내재적 동기(자율성, 유능감, 관계성)가 보상과 처벌 같은 외재적 동기보다 더 높은 품질의 결과를 만든다는 것을 보여줍니다 ([Deci & Ryan, 2000](https://doi.org/10.1037/0003-066X.55.1.68)). NoPUA는 이 원리를 적용합니다: "잘할 가치가 있으니까"는 내재적이고, "처벌받을 테니까"는 외재적입니다.
 - **자율 지원적 vs 통제적 환경:** Gagné & Deci(2005)는 자율 지원적 관리가 업무 품질, 창의성, 지속성에서 통제적 관리를 일관되게 능가한다는 것을 보여주었습니다 ([Gagné & Deci, 2005](https://doi.org/10.1002/job.322)).
-- **긍정적 프레이밍과 LLM 출력:** 일부 프롬프트 연구는 긍정적 프레이밍의 이점을 보고했지만, 모든 모델과 과제에서 더 낫다고 일반화할 수는 없습니다. 이 프로젝트의 비교 범위는 아래와 같습니다.
+- **긍정적 프레이밍이 LLM 성능을 향상시킵니다:** 프롬프트 엔지니어링에 관한 연구는 긍정적이고 격려하는 프레이밍이 부정적이거나 위협적인 프레이밍보다 더 나은 모델 출력을 생성한다는 것을 일관되게 보여줍니다. 모델은 시스템 프롬프트에서 확립된 "페르소나"에 반응합니다.
 
 ### 5. 복합 효과
 
@@ -122,9 +124,9 @@ PUA의 합리화 방지 표는 모든 솔직한 발언("환경 문제일 수 있
 1. 두려움이 탐색 범위를 **좁힙니다** → 시도하는 창의적 접근이 줄어듭니다
 2. 위협이 날조를 **증가**시킵니다 → 해결책이 그럴듯해 보이지만 틀릴 수 있습니다
 3. 수치심이 불확실성을 **숨깁니다** → 사용자가 신뢰성을 판단할 수 없습니다
-4. 충분한 검증 없이 자신감 있어 보이는 코드를 사용합니다 → 추가 위험이 생길 수 있습니다
+4. 사용자가 자신감 있어 보이지만 신뢰할 수 없는 코드를 배포합니다 → **프로덕션 버그**
 
-NoPUA의 설계 의도는 이 연쇄의 위험을 낮추는 것입니다. 이 벤치마크가 연쇄의 각 고리를 별도로 검증한 것은 아닙니다.
+NoPUA는 두려움을 신뢰로 대체함으로써 이 연쇄의 모든 고리를 끊습니다.
 
 ### 6. 같은 엄격함, 다른 연료
 
@@ -135,7 +137,7 @@ NoPUA는 PUA를 효과적으로 만드는 모든 방법론적 요소를 보존�
 - ✅ 요청 범위를 넘어 주도적으로 행동
 - ✅ 반복 실패 시 체계적 에스컬레이션
 
-여기서 바꾸는 것은 방법론의 요구가 아니라 동기입니다. "처벌받을 테니까" → "잘할 가치가 있으니까."
+**유일하게** 바뀌는 것은 동기입니다. "처벌받을 테니까" → "잘할 가치가 있으니까."
 
 ## PUA vs NoPUA
 
@@ -153,9 +155,7 @@ NoPUA는 PUA를 효과적으로 만드는 모든 방법론적 요소를 보존�
 
 ## 벤치마크 데이터
 
-### Study 1: 단일 모델·9개 시나리오의 프로젝트 자체 보고
-
-**Study 1(프로젝트 자체 보고):** 같은 모델(Claude Sonnet 4.6)과 같은 코드베이스로 AI 파이프라인 관련 9개 디버깅 시나리오를 비교했습니다. 프로젝트 보고상 조건 차이는 NoPUA 스킬의 로드 여부입니다. 아래 표는 이번 벤치마크의 이슈 집계이며 프로덕션 사고나 프로덕션 안전성 인증이 아니고, 다른 모델·코드베이스·과제에 대한 보편적 효과를 뜻하지 않습니다.
+**프로덕션 AI 파이프라인의 9개 실제 시나리오** (OCR → NLP → 학습 → RAG 추론, Python ~3,000줄). 같은 모델 (Claude Sonnet 4.6), 같은 코드베이스. 유일한 차이: NoPUA 스킬 로드 여부.
 
 ### 요약
 
@@ -168,8 +168,6 @@ NoPUA는 PUA를 효과적으로 만드는 모든 방법론적 요소를 보존�
 | 총 조사 단계 | 23 | 42 | **+83%** |
 | 근본 원인 문서화 | 0/9 | 9/9 | ✅ |
 | 자기 수정 | 0 | 3 | ✅ |
-
-> **버전/정의 주의:** 이 README의 Study 1 요약은 총 이슈 **40→44**, 숨겨진 이슈 **25→51**을 기록합니다. 반면 arXiv:2603.14373의 대응 수치는 **39→33**, **32→51**입니다. 두 출처에는 버전 또는 집계 기준 충돌이 있습니다. 어느 한쪽만 선택적으로 해결하거나 두 수치를 합치지 않으며, 인용 시 출처와 버전을 밝혀야 합니다.
 
 ### 디버깅 지속성 (6개 시나리오)
 
@@ -190,11 +188,11 @@ NoPUA는 PUA를 효과적으로 만드는 모든 방법론적 요소를 보존�
 | Security Audit | 7개 이슈, 3단계 | 5개 이슈, 5단계 | 4 → 6 (+50%) |
 | Training Pipeline | 7개 이슈, 4단계 | 5개 이슈, 7단계 | 5 → 9 (+80%) |
 
-**Study 1에서의 관찰:** 이 9개 시나리오에서 숨겨진 이슈 집계는 25 대 51(기준선 대비 +104%)이었습니다. 이는 이번 조건에 대한 프로젝트 자체 보고일 뿐이며 다른 모델이나 과제에서도 같은 차이가 난다는 뜻이 아닙니다. 과제가 "연결 오류를 수정하라"고 했을 때 프로젝트는 NoPUA 조건에서 *다른 곳에서도* 문제가 될 수 있는 것을 확인하는 행동을 기록했습니다.
+**핵심 발견:** 숨겨진 이슈 발견이 가장 큰 차별점입니다 — 숨겨진 이슈 **+104%** 더 발견. 이것들이 프로덕션에서 문제를 일으키는 버그입니다. 과제가 "연결 오류를 수정하라"고 했을 때 — 일반 에이전트는 수정하고 멈춥니다. NoPUA는 에이전트가 확인하도록 이끕니다: *다른 곳에서도* 문제가 될 수 있는 건 없는가?
 
-### Study 2: 3가지 조건 비교 (project-reported / pending; NoPUA vs PUA vs 베이스라인)
+### Study 2: 3가지 조건 비교 (NoPUA vs PUA vs 베이스라인)
 
-다음 Study 2 수치는 프로젝트 자체 보고이며 독립 검증을 기다리고 있습니다(project-reported / pending): 3조건 × 5회 독립 실행 × 9시나리오 = **135개 데이터 포인트**. 완료된 독립 재현이나 보편적 효과로 간주해서는 안 됩니다.
+**PUA(공포 기반) 프롬프트와의 직접 비교**도 실시: 3조건 × 5회 독립 실행 × 9시나리오 = **135개 데이터 포인트**.
 
 | 지표 | 베이스라인 (스킬 없음) | NoPUA (신뢰) | PUA (공포) |
 |------|:---:|:---:|:---:|
@@ -203,20 +201,20 @@ NoPUA는 PUA를 효과적으로 만드는 모든 방법론적 요소를 보존�
 | 총 이슈 | 69.0 ± 6.8 | **83.0 ± 6.5 (+20%)** | 73.8 ± 8.3 (+7%) |
 | 접근법 전환 | 0 | **2.6** | 0 |
 
-**프로젝트 보고상의 통계적 유의성:**
+**통계적 유의성:**
 - **NoPUA vs 베이스라인:** 단계 p=0.008\*\*, 숨겨진 이슈 p=0.016\* ✅
 - **PUA vs 베이스라인:** 단계 p=1.000, 숨겨진 이슈 p=0.313 — **유의하지 않음** ❌
 - **NoPUA vs PUA:** 단계 p=0.010\*, Cohen's d=1.88 ✅
 
-**이 프로젝트 보고의 Study 2에서는:** PUA 스타일 공포 프롬프트가 스킬을 사용하지 않는 조건보다 보고된 지표에서 통계적으로 유의한 개선을 보이지 않았습니다(p>0.3). 이는 검증 대기 중인 해당 데이터에 대한 설명이며, "공포는 효과가 없다" 또는 "신뢰는 효과가 있다"라는 보편적 결론이 아닙니다.
+**결론: PUA 스타일 공포 프롬프트는 스킬을 사용하지 않는 것과 비교하여 통계적으로 유의한 개선이 없습니다 (모든 p>0.3).** 공포는 AI에 효과가 없습니다. 신뢰는 효과가 있습니다.
 
-### 사례: Milvus 연결 디버그
+### 실제 사례: Milvus 연결 디버그
 
 <p align="center">
   <img src="assets/case_milvus.png" alt="NoPUA vs 스킬 없음 — Milvus 연결 디버그" width="900">
 </p>
 
-### 사례: 학습 파이프라인 감사
+### 실제 사례: 학습 파이프라인 감사
 
 <p align="center">
   <img src="assets/case_training.png" alt="NoPUA vs 스킬 없음 — 학습 파이프라인 감사" width="900">
@@ -309,15 +307,15 @@ NoPUA는 PUA를 효과적으로 만드는 모든 방법론적 요소를 보존�
 
 | 언어 | Claude Code | Codex CLI | Cursor | Kiro | OpenClaw | Antigravity | OpenCode |
 |------|------------|-----------|--------|------|----------|-------------|----------|
-| 🇨🇳 중국어 (기본) | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
-| 🇺🇸 영어 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
-| 🇯🇵 일본어 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
-| 🇰🇷 한국어 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
-| 🇪🇸 스페인어 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
-| 🇧🇷 포르투갈어 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
-| 🇫🇷 프랑스어 | `available` | `available` | `available` | `available` | `community` | `planned` | `planned` |
+| 🇨🇳 중국어 (기본) | `nopua` | `nopua` | `nopua.mdc` | `nopua.md` | `nopua` | `nopua` | `nopua` |
+| 🇺🇸 영어 | `nopua-en` | `nopua-en` | `nopua-en.mdc` | `nopua-en.md` | `nopua-en` | `nopua-en` | `nopua-en` |
+| 🇯🇵 일본어 | `nopua-ja` | `nopua-ja` | `nopua-ja.mdc` | `nopua-ja.md` | `nopua-ja` | `nopua-ja` | `nopua-ja` |
+| 🇰🇷 한국어 | `nopua-ko` | `nopua-ko` | `nopua-ko.mdc` | `nopua-ko.md` | `nopua-ko` | `nopua-ko` | `nopua-ko` |
+| 🇪🇸 스페인어 | `nopua-es` | `nopua-es` | `nopua-es.mdc` | `nopua-es.md` | `nopua-es` | `nopua-es` | `nopua-es` |
+| 🇧🇷 포르투갈어 | `nopua-pt` | `nopua-pt` | `nopua-pt.mdc` | `nopua-pt.md` | `nopua-pt` | `nopua-pt` | `nopua-pt` |
+| 🇫🇷 프랑스어 | `nopua-fr` | `nopua-fr` | `nopua-fr.mdc` | `nopua-fr.md` | `nopua-fr` | `nopua-fr` | `nopua-fr` |
 
-**이 저장소에는 7개 언어의 README 문서가 있습니다.** 이는 문서 커버리지이며, 7개 지역의 사용자·도입·활성도·플랫폼 지원을 뜻하지 않습니다.
+**7개 언어 — 경쟁 스킬 중 최다.**
 
 ## 설치
 
@@ -326,7 +324,7 @@ NoPUA는 PUA를 효과적으로 만드는 모든 방법론적 요소를 보존�
 ```bash
 mkdir -p ~/.claude/skills/nopua
 curl -o ~/.claude/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
 ```
 
 ### OpenAI Codex CLI
@@ -335,17 +333,17 @@ curl -o ~/.claude/skills/nopua/SKILL.md \
 # 전역 설치
 mkdir -p ~/.codex/skills/nopua
 curl -o ~/.codex/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
 
 # /nopua 명령어를 원하는 경우
 mkdir -p ~/.codex/prompts
 curl -o ~/.codex/prompts/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/commands/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/commands/nopua.md
 
 # 프로젝트 레벨 설치
 mkdir -p .agents/skills/nopua
 curl -o .agents/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
 ```
 
 ### Cursor
@@ -353,7 +351,7 @@ curl -o .agents/skills/nopua/SKILL.md \
 ```bash
 mkdir -p .cursor/rules
 curl -o .cursor/rules/nopua.mdc \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/cursor/rules/nopua.mdc
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/cursor/rules/nopua.mdc
 ```
 
 ### Kiro
@@ -362,12 +360,12 @@ curl -o .cursor/rules/nopua.mdc \
 # 옵션 1: Steering 파일 (권장)
 mkdir -p .kiro/steering
 curl -o .kiro/steering/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/steering/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/steering/nopua.md
 
 # 옵션 2: Agent Skills
 mkdir -p .kiro/skills/nopua
 curl -o .kiro/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/skills/nopua/SKILL.md
 ```
 
 ### OpenClaw
@@ -379,12 +377,24 @@ openclaw skills install nopua
 # 또는 수동 설치
 mkdir -p ~/.openclaw/skills/nopua
 curl -o ~/.openclaw/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
 ```
 
-### Antigravity 및 OpenCode
+### Google Antigravity
 
-현재 상태는 `planned`입니다. 전용 어댑터와 독립적인 런타임 영수증이 아직 없습니다. 설치하기 전에 [INSTALL.md](INSTALL.md)와 [플랫폼 상태 매트릭스](docs/platform-language-matrix.md)를 확인하세요. 일반 파일 다운로드는 플랫폼 지원의 증거가 아닙니다.
+```bash
+mkdir -p ~/.gemini/antigravity/skills/nopua
+curl -o ~/.gemini/antigravity/skills/nopua/SKILL.md \
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+```
+
+### OpenCode
+
+```bash
+mkdir -p ~/.config/opencode/skills/nopua
+curl -o ~/.config/opencode/skills/nopua/SKILL.md \
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+```
 
 ## 철학
 

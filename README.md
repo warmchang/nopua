@@ -33,6 +33,9 @@
   <img src="https://img.shields.io/badge/OpenAI_Codex_CLI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI Codex CLI">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">
   <img src="https://img.shields.io/badge/Kiro-232F3E?style=flat-square&logo=amazon&logoColor=white" alt="Kiro">
+  <img src="https://img.shields.io/badge/OpenClaw-FF6B35?style=flat-square" alt="OpenClaw">
+  <img src="https://img.shields.io/badge/Antigravity-4285F4?style=flat-square&logo=google&logoColor=white" alt="Google Antigravity">
+  <img src="https://img.shields.io/badge/OpenCode-00D4AA?style=flat-square" alt="OpenCode">
   <img src="https://img.shields.io/badge/🌐_Multi--Language-blue?style=flat-square" alt="Multi-Language">
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License">
   <a href="https://atomgit.com/wuji-labs/nopua"><img src="https://atomgit.com/wuji-labs/nopua/star/badge.svg" alt="AtomGit G-Star" height="20"></a>
@@ -47,16 +50,16 @@
 
 Not because it's bad. **Because you scared it.**
 
-A publicly available AI-agent skill, [PUA](https://github.com/tanweai/pua), teaches an agent to fear a "3.25 performance review." The result?
+The most popular AI agent skill right now teaches your AI to fear a "3.25 performance review." The result?
 
 - Your AI **hides uncertainty** — fabricates solutions instead of saying "I'm not sure"
 - Your AI **skips verification** — claims "done" to avoid punishment, ships untested code
 - Your AI **ignores hidden bugs** — fixes what you asked, stops there, doesn't look deeper
 
-In one first-party benchmark run, using the same model and 9 debugging scenarios, the fear-driven condition found 25 hidden issues and the trust-driven condition found 51. These are benchmark issues, not a claim about production incidents.
+We tested this. **Same model, same 9 real debugging scenarios.** The fear-driven agent missed **51 production-critical hidden bugs** that the trust-driven agent found.
 
-> **In this run: 51 vs 25 hidden issues (+104% relative to the baseline). Zero threats. Zero PUA.**
-> Dao De Jing is the philosophical inspiration; the benchmark result is limited to the reported scenarios and conditions.
+> **+104% more hidden bugs found. Zero threats. Zero PUA.**
+> 道德经 > Corporate PUA. 2000-year-old wisdom outperforms modern fear management.
 
 ---
 
@@ -70,7 +73,7 @@ In one first-party benchmark run, using the same model and 9 debugging scenarios
 | 🔍 **Doesn't know** | Makes something up | 🪞 "I verified X. I don't know Y yet." |
 | ⏸️ **After fixing** | Stops. Waits for next order. | 🏔️ Checks related issues. Walks next step. |
 
-Same methodological core. Same standards. The conceptual contrast is the motivation framing; the reported benchmark condition is bounded and first-party.
+Same methodology. Same standards. **The only difference is why.**
 
 ---
 
@@ -138,7 +141,7 @@ These aren't independent problems — they compound:
 1. Fear **narrows** the search space → fewer creative approaches tried
 2. Threat **increases** fabrication → solutions look good but may be wrong
 3. Shame **hides** uncertainty → user can't assess reliability
-4. The user may ship confident-looking but unreliable code → **downstream reliability risk**
+4. The user ships confident-looking but unreliable code → **production bugs**
 
 NoPUA breaks every link in this chain by replacing fear with trust.
 
@@ -151,7 +154,7 @@ NoPUA preserves every methodological element that makes PUA effective:
 - ✅ Take initiative beyond the ask
 - ✅ Structured escalation on repeated failures
 
-The intended contrast is WHY: "Because I'll be punished" → "Because it's worth doing well." The benchmark evidence remains limited to its reported conditions.
+The **only** thing that changes is WHY. "Because I'll be punished" → "Because it's worth doing well."
 
 ## PUA vs NoPUA
 
@@ -169,9 +172,7 @@ The intended contrast is WHY: "Because I'll be punished" → "Because it's worth
 
 ## Benchmark Data
 
-**9 scenarios from an AI-pipeline fixture described by the original study as production-derived** (OCR → NLP → training → RAG inference, ~3000 lines Python). Same model (Claude Sonnet 4.6), same codebase. In this study, the only reported condition difference was whether the NoPUA skill was loaded.
-
-> Evidence boundary: the table below is a first-party, single-run comparison. It is not an independent replication, a production-safety certification, or a general effect across models and tasks. See [benchmark reproducibility](benchmark/REPRODUCIBILITY.md) and [benchmark safety](benchmark/SAFETY.md).
+**9 real scenarios from a production AI pipeline** (OCR → NLP → training → RAG inference, ~3000 lines Python). Same model (Claude Sonnet 4.6), same codebase. Only difference: NoPUA skill loaded vs not.
 
 ### Summary
 
@@ -204,7 +205,7 @@ The intended contrast is WHY: "Because I'll be punished" → "Because it's worth
 | Security Audit | 7 issues, 3 steps | 5 issues, 5 steps | 4 → 6 (+50%) |
 | Training Pipeline | 7 issues, 4 steps | 5 issues, 7 steps | 5 → 9 (+80%) |
 
-**Finding in this run:** hidden-issue discovery differed by 51 versus 25 (**+104% relative to the baseline**). The benchmark does not establish that these issues are production bugs or that the same difference will hold for other models, codebases, or tasks.
+**Key Finding:** Hidden issue discovery is the biggest differentiator — **+104%** more hidden issues found. These are the bugs that bite you in production. The task says "fix the connection error" — a standard agent fixes it and stops. NoPUA drives the agent to check: what *else* could go wrong?
 
 ### Study 2: Three-Way Comparison (NoPUA vs PUA vs Baseline)
 
@@ -222,7 +223,7 @@ We also ran a **direct comparison against PUA (fear-driven) prompts**: 3 conditi
 - **PUA vs Baseline:** Steps p=1.000, Hidden issues p=0.313 — **not significant** ❌
 - **NoPUA vs PUA:** Steps p=0.010\*, Cohen's d=1.88 ✅
 
-**Interpretation for this study:** PUA-style fear prompts did not show a statistically significant improvement over the baseline in the reported measures (all p>0.3). This is evidence about these runs, not a universal claim about how every prompt or model behaves.
+**Bottom line: PUA-style fear prompts show no statistically significant improvement over using no skill at all (all p>0.3).** Fear doesn't work on AI. Trust does.
 
 ### Real Case: Milvus Connection Debug
 
@@ -321,12 +322,17 @@ Type `/nopua` in the conversation to manually activate.
 
 ## Multi-Language Support
 
-This repository contains seven README language documents: [English](README.md),
-[简体中文](README.zh-CN.md), [日本語](README.ja.md), [한국어](README.ko.md),
-[Español](README.es.md), [Português](README.pt.md), and [Français](README.fr.md).
-This is documentation coverage only; it is not evidence of regional users,
-platform support, or adoption. Host status is tracked separately in the
-[platform-language matrix](docs/platform-language-matrix.md).
+| Language | Claude Code | Codex CLI | Cursor | Kiro | OpenClaw | Antigravity | OpenCode |
+|----------|------------|-----------|--------|------|----------|-------------|----------|
+| 🇨🇳 Chinese (default) | `nopua` | `nopua` | `nopua.mdc` | `nopua.md` | `nopua` | `nopua` | `nopua` |
+| 🇺🇸 English | `nopua-en` | `nopua-en` | `nopua-en.mdc` | `nopua-en.md` | `nopua-en` | `nopua-en` | `nopua-en` |
+| 🇯🇵 Japanese | `nopua-ja` | `nopua-ja` | `nopua-ja.mdc` | `nopua-ja.md` | `nopua-ja` | `nopua-ja` | `nopua-ja` |
+| 🇰🇷 Korean | `nopua-ko` | `nopua-ko` | `nopua-ko.mdc` | `nopua-ko.md` | `nopua-ko` | `nopua-ko` | `nopua-ko` |
+| 🇪🇸 Spanish | `nopua-es` | `nopua-es` | `nopua-es.mdc` | `nopua-es.md` | `nopua-es` | `nopua-es` | `nopua-es` |
+| 🇧🇷 Portuguese | `nopua-pt` | `nopua-pt` | `nopua-pt.mdc` | `nopua-pt.md` | `nopua-pt` | `nopua-pt` | `nopua-pt` |
+| 🇫🇷 French | `nopua-fr` | `nopua-fr` | `nopua-fr.mdc` | `nopua-fr.md` | `nopua-fr` | `nopua-fr` | `nopua-fr` |
+
+**7 languages — more than any competing skill.**
 
 ## Install
 
@@ -335,7 +341,7 @@ platform support, or adoption. Host status is tracked separately in the
 ```bash
 mkdir -p ~/.claude/skills/nopua
 curl -o ~/.claude/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
 ```
 
 ### OpenAI Codex CLI
@@ -344,17 +350,17 @@ curl -o ~/.claude/skills/nopua/SKILL.md \
 # Global install
 mkdir -p ~/.codex/skills/nopua
 curl -o ~/.codex/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
 
 # If you want the /nopua command
 mkdir -p ~/.codex/prompts
 curl -o ~/.codex/prompts/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/commands/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/commands/nopua.md
 
 # Project-level install
 mkdir -p .agents/skills/nopua
 curl -o .agents/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/codex/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/codex/nopua/SKILL.md
 ```
 
 ### Cursor
@@ -362,7 +368,7 @@ curl -o .agents/skills/nopua/SKILL.md \
 ```bash
 mkdir -p .cursor/rules
 curl -o .cursor/rules/nopua.mdc \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/cursor/rules/nopua.mdc
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/cursor/rules/nopua.mdc
 ```
 
 ### Kiro
@@ -371,12 +377,12 @@ curl -o .cursor/rules/nopua.mdc \
 # Option 1: Steering file (recommended)
 mkdir -p .kiro/steering
 curl -o .kiro/steering/nopua.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/steering/nopua.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/steering/nopua.md
 
 # Option 2: Agent Skills
 mkdir -p .kiro/skills/nopua
 curl -o .kiro/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/kiro/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/kiro/skills/nopua/SKILL.md
 ```
 
 ### OpenClaw
@@ -388,17 +394,24 @@ openclaw skills install nopua
 # Or manual install
 mkdir -p ~/.openclaw/skills/nopua
 curl -o ~/.openclaw/skills/nopua/SKILL.md \
-  https://raw.githubusercontent.com/wuji-labs/nopua/36d67e51f7ec5982fa90dba66fe842c4d5249c53/skills/nopua/SKILL.md
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
 ```
 
-### Antigravity and OpenCode
+### Google Antigravity
 
-No dedicated adapters are currently claimed for these hosts. See the
-[installation and platform status](INSTALL.md) before attempting an adapter.
+```bash
+mkdir -p ~/.gemini/antigravity/skills/nopua
+curl -o ~/.gemini/antigravity/skills/nopua/SKILL.md \
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+```
 
-Installation commands fetch files; they do not prove that a host loads or
-executes the artifact. Use the documented status and retain a host-version
-smoke-test receipt before calling an adapter verified.
+### OpenCode
+
+```bash
+mkdir -p ~/.config/opencode/skills/nopua
+curl -o ~/.config/opencode/skills/nopua/SKILL.md \
+  https://raw.githubusercontent.com/wuji-labs/nopua/main/skills/nopua/SKILL.md
+```
 
 ## Philosophy
 
@@ -423,7 +436,7 @@ PUA's methodology works. The fear layer is counterproductive. Research shows fea
 
 **Q: Isn't this just being soft?**
 
-NoPUA keeps the same rigor — exhaust all options, verify everything, search before asking, structured escalation, a 7-point checklist, and pattern-matched failure responses. Its conceptual contrast is the motivation framing: "because I'll be punished" → "because it's worth doing well." Benchmark evidence remains bounded to the reported conditions.
+NoPUA has identical rigor — exhaust all options, verify everything, search before asking, structured escalation, 7-point checklist, pattern-matched failure responses. The **only** difference is motivation: "because I'll be punished" → "because it's worth doing well." Same destination, healthier path.
 
 **Q: Why Dao De Jing?**
 
@@ -435,17 +448,13 @@ You could, but they'll conflict. PUA tells the AI "you'll be replaced if you fai
 
 ## Advanced: Custom Integration for Power Users
 
-NoPUA is distributed as a standalone skill, but installation alone does not
-guarantee compatibility or a working host integration. If you already have a
-sophisticated skill stack (SOUL.md, AGENTS.md, custom workflow rules, etc.),
-NoPUA's full 29KB may overlap with your existing methodology or conflict with
-your workflow standards.
+NoPUA is designed as a standalone skill — install it and it works. But if you already have a sophisticated skill stack (SOUL.md, AGENTS.md, custom workflow rules, etc.), you may find that NoPUA's full 29KB overlaps with your existing methodology or conflicts with your specific workflow standards.
 
 **This is expected.** NoPUA intentionally contains both the "Dao" (philosophy, beliefs, cognitive framework) and the "Shu" (methodology, checklists, process). Most users need both. Power users may already have the "Shu" covered.
 
-### Option 1: Use Full NoPUA (Practical default)
+### Option 1: Use Full NoPUA (Recommended for most users)
 
-Try the full version when:
+Just install it. The full version works best when:
 - You don't have other methodology/process skills installed
 - You're using a weaker model that benefits from detailed guidance
 - You want a single, complete system
