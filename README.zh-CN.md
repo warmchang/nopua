@@ -12,14 +12,9 @@
 </p>
 
 <p align="center">
-  <img src="assets/wechat-group3.jpg" alt="扫码加入项目微信群③" width="200">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/wechat-personal.jpg" alt="添加作者微信" width="200">
+  <img src="assets/wechat-personal.jpg" alt="Add WUJI on WeChat" width="200">
 </p>
-
-<p align="center">
-  扫码加入项目微信群③（二维码 7 天内有效） &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 添加作者微信
-</p>
+<p align="center">扫码添加作者微信</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Claude_Code-black?style=flat-square&logo=anthropic&logoColor=white" alt="Claude Code">

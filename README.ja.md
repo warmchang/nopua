@@ -12,6 +12,11 @@
 </p>
 
 <p align="center">
+  <img src="assets/wechat-personal.jpg" alt="Add WUJI on WeChat" width="200">
+</p>
+<p align="center">QRコードをスキャンして作者のWeChatを追加 · Scan to add the author on WeChat</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Claude_Code-black?style=flat-square&logo=anthropic&logoColor=white" alt="Claude Code">
   <img src="https://img.shields.io/badge/OpenAI_Codex_CLI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI Codex CLI">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">

@@ -19,14 +19,9 @@
 </p>
 
 <p align="center">
-  <img src="assets/wechat-group3.jpg" alt="Scan to join WeChat group 3" width="200">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/wechat-personal.jpg" alt="Add author on WeChat" width="200">
+  <img src="assets/wechat-personal.jpg" alt="Add WUJI on WeChat" width="200">
 </p>
-
-<p align="center">
-  扫码加入微信群 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 添加作者微信
-</p>
+<p align="center">扫码添加作者微信 · Scan to add the author on WeChat</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Claude_Code-black?style=flat-square&logo=anthropic&logoColor=white" alt="Claude Code">
@@ -519,7 +514,3 @@ MIT
   <sub>Put yourself last, and you end up first. Is it not through selflessness that one achieves one's own fulfillment?</sub><br>
   <sub>— Dao De Jing, Chapter 7</sub>
 </p>
-
-## 联系 · Contact
-扫码添加无极微信，交流合作 · Scan to add WUJI on WeChat
-<img src="assets/wechat-qr.png" width="200" alt="WUJI WeChat QR">
