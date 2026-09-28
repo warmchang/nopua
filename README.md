@@ -519,3 +519,7 @@ MIT
   <sub>Put yourself last, and you end up first. Is it not through selflessness that one achieves one's own fulfillment?</sub><br>
   <sub>— Dao De Jing, Chapter 7</sub>
 </p>
+
+## 联系 · Contact
+扫码添加无极微信，交流合作 · Scan to add WUJI on WeChat
+<img src="assets/wechat-qr.png" width="200" alt="WUJI WeChat QR">
